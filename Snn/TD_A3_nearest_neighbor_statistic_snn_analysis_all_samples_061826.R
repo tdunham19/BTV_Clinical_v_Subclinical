@@ -10,9 +10,22 @@
 # doi: 10.1093/genetics/155.4.2011. PMID: 10924493; PMCID: PMC1461195.
 #
 # Original script written by: Mark Stenglein 8/28/2025
-# Script adapted by: Tillie Dunham 09/22/2025 for Aim 3 Analysis
+# Script adapted by: Tillie Dunham 04/01/2026 for Aim 3 Analysis
 
-# A3 - Whole Genomes Only (all segments n=29)
+# A3 - Re-Run all segments TD 06.18.26
+# Run with updated alignments and sequences submitted to GenBank
+
+# All samples 
+# s1 - n29
+# s2 - n29
+# s3 - n30
+# s4 - n31
+# s5 - n31
+# s6 - n33
+# s7 - n29
+# s8 - n33
+# s9 - n31
+# s10 - n31
 
 #######################################################
 
@@ -26,10 +39,12 @@ library(profvis)
 
 #######################################################
 
-
+# CLINICAL/SUBCLINICAL STATUS
 
 ################################################################################
-# Segment 1 Snn - Re-done on 02.05.26 w/all samples
+
+################################################################################
+# Segment 1 Snn
 
 # -------------------------------
 # Metadata (sample status)
@@ -46,11 +61,11 @@ metadata <- metadata %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s1 <-  function (
-    fasta_msa = "../.././Alignments/A3_s1_n29_CDS_Only_aln.fasta", 
+    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", 
     prefix="A3_s1_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "../.././Alignments/A3_s1_n29_CDS_Only_aln.fasta"
+  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta"
   # prefix="A3_s1_n29_CDS_only_aln"
   
   # read in sequences
@@ -126,7 +141,7 @@ process_alignment_s1 <-  function (
   
   
   return(list(snn    = this_snn,
-             # pvalue = this_snn_p_val_bonf,
+              # pvalue = this_snn_p_val_bonf,
               pvalue = this_snn_p_val,
               plot   = plot_snn,
               text   = snn_text))
@@ -180,7 +195,7 @@ calculate_snn_s1 <- function(distance_matrix, groups_vector) {
   Snn 
 }
 
-Segment1_snn <- process_alignment_s1("../.././Alignments/A3_s1_n29_CDS_Only_aln.fasta", "Segment 1, n=29, Snn=")
+Segment1_snn <- process_alignment_s1("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", "Segment 1, n=29, Snn=")
 
 Segment1_snn$plot
 
@@ -190,7 +205,7 @@ Segment1_snn$plot
 
 
 ################################################################################
-# Segment 2 Snn - Re-done on 02.05.26 w/all samples
+# Segment 2 Snn
 
 # -------------------------------
 # Metadata (sample status)
@@ -207,11 +222,11 @@ metadata <- metadata %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s2 <-  function (
-    fasta_msa = "../.././Alignments/A3_s2_n29_CDS_Only_aln.fasta", 
+    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", 
     prefix="A3_s2_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "../.././Alignments/A3_s2_n29_CDS_Only_aln.fasta"
+  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta"
   # prefix="A3_s2_n29_CDS_only_aln"
   
   # read in sequences
@@ -341,7 +356,7 @@ calculate_snn_s2 <- function(distance_matrix, groups_vector) {
   Snn 
 }
 
-Segment2_snn <- process_alignment_s2("../.././Alignments/A3_s2_n29_CDS_Only_aln.fasta", "Segment 2, n=29, Snn=")
+Segment2_snn <- process_alignment_s2("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", "Segment 2, n=29, Snn=")
 
 Segment2_snn$plot
 
@@ -351,7 +366,7 @@ Segment2_snn$plot
 
 
 ################################################################################
-# Segment 3 Snn - Re-done on 02.05.26 w/all samples
+# Segment 3 Snn
 
 # -------------------------------
 # Metadata (sample status)
@@ -368,12 +383,12 @@ metadata <- metadata %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s3 <-  function (
-    fasta_msa = "../.././Alignments/A3_s3_n29_CDS_Only_aln.fasta",
-    prefix="A3_s3_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s3_n30_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "../.././Alignments/A3_s3_n29_CDS_Only_aln.fasta"
-  # prefix="A3_s3_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s3_n30_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -448,7 +463,7 @@ process_alignment_s3 <-  function (
   
   
   return(list(snn    = this_snn,
-             # pvalue = this_snn_p_val_bonf,
+              # pvalue = this_snn_p_val_bonf,
               pvalue = this_snn_p_val,
               plot   = plot_snn,
               text   = snn_text))
@@ -502,7 +517,7 @@ calculate_snn_s3 <- function(distance_matrix, groups_vector) {
   Snn 
 }
 
-Segment3_snn <- process_alignment_s3("../.././Alignments/A3_s3_n29_CDS_Only_aln.fasta", "Segment 3, n=29, Snn=")
+Segment3_snn <- process_alignment_s3("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta", "Segment 3, n=30, Snn=")
 
 Segment3_snn$plot
 
@@ -512,7 +527,7 @@ Segment3_snn$plot
 
 
 ################################################################################
-# Segment 4 Snn - Done on 02.05.26 w/all samples
+# Segment 4 Snn
 
 # -------------------------------
 # Metadata (sample status)
@@ -529,12 +544,12 @@ metadata <- metadata %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s4 <-  function (
-    fasta_msa = "../.././Alignments/A3_s4_n29_CDS_Only_aln.fasta",
-    prefix="A3_s4_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s4_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "../.././Alignments/A3_s4_n29_CDS_Only_aln.fasta"
-  # prefix="A3_s4_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s4_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -663,7 +678,7 @@ calculate_snn_s4 <- function(distance_matrix, groups_vector) {
   Snn 
 }
 
-Segment4_snn <- process_alignment_s4("../.././Alignments/A3_s4_n29_CDS_Only_aln.fasta", "Segment 4, n=29, Snn=")
+Segment4_snn <- process_alignment_s4("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta", "Segment 4, n=31, Snn=")
 
 Segment4_snn$plot
 
@@ -673,7 +688,7 @@ Segment4_snn$plot
 
 
 ################################################################################
-# Segment 5 Snn - Re-done on 02.05.26 w/all samples
+# Segment 5 Snn
 
 # -------------------------------
 # Metadata (sample status)
@@ -690,12 +705,12 @@ metadata <- metadata %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s5 <-  function (
-    fasta_msa = "../.././Alignments/A3_s5_n29_CDS_Only_aln.fasta",
-    prefix="A3_s5_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s5_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "../.././Alignments/A3_s5_n29_CDS_Only_aln.fasta"
-  # prefix="A3_s5_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s5_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -770,7 +785,7 @@ process_alignment_s5 <-  function (
   
   
   return(list(snn    = this_snn,
-             # pvalue = this_snn_p_val_bonf,
+              # pvalue = this_snn_p_val_bonf,
               pvalue = this_snn_p_val,
               plot   = plot_snn,
               text   = snn_text))
@@ -824,7 +839,7 @@ calculate_snn_s5 <- function(distance_matrix, groups_vector) {
   Snn 
 }
 
-Segment5_snn <- process_alignment_s5("../.././Alignments/A3_s5_n29_CDS_Only_aln.fasta", "Segment 5, n=29, Snn=")
+Segment5_snn <- process_alignment_s5("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta", "Segment 5, n=31, Snn=")
 
 Segment5_snn$plot
 
@@ -834,7 +849,7 @@ Segment5_snn$plot
 
 
 ################################################################################
-# Segment 6 Snn - Re-done on 02.05.26 w/all samples
+# Segment 6 Snn
 
 # -------------------------------
 # Metadata (sample status)
@@ -851,12 +866,12 @@ metadata <- metadata %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s6 <-  function (
-    fasta_msa = "../.././Alignments/A3_s6_n29_CDS_Only_aln.fasta",
-    prefix="A3_s6_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s6_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "../.././Alignments/A3_s6_n29_CDS_Only_aln.fasta"
-  # prefix="A3_s6_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s6_n33_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -985,7 +1000,7 @@ calculate_snn_s6 <- function(distance_matrix, groups_vector) {
   Snn 
 }
 
-Segment6_snn <- process_alignment_s6("../.././Alignments/A3_s6_n29_CDS_Only_aln.fasta", "Segment 6, n=29, Snn=")
+Segment6_snn <- process_alignment_s6("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta", "Segment 6, n=33, Snn=")
 
 Segment6_snn$plot
 
@@ -994,7 +1009,7 @@ Segment6_snn$plot
 
 
 ################################################################################
-# Segment 7 Snn - Re-done on 02.05.26 w/all samples
+# Segment 7 Snn
 
 # -------------------------------
 # Metadata (sample status)
@@ -1011,11 +1026,11 @@ metadata <- metadata %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s7 <-  function (
-    fasta_msa = "../.././Alignments/A3_s7_n29_CDS_Only_aln.fasta",
+    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta",
     prefix="A3_s7_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "../.././Alignments/A3_s7_n29_CDS_Only_aln.fasta"
+  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta"
   # prefix="A3_s7_n29_CDS_only_aln"
   
   # read in sequences
@@ -1091,7 +1106,7 @@ process_alignment_s7 <-  function (
   
   
   return(list(snn    = this_snn,
-             # pvalue = this_snn_p_val_bonf,
+              # pvalue = this_snn_p_val_bonf,
               pvalue = this_snn_p_val,
               plot   = plot_snn,
               text   = snn_text))
@@ -1145,7 +1160,7 @@ calculate_snn_s7 <- function(distance_matrix, groups_vector) {
   Snn 
 }
 
-Segment7_snn <- process_alignment_s7("../.././Alignments/A3_s7_n29_CDS_Only_aln.fasta", "Segment 7, n=29, Snn=")
+Segment7_snn <- process_alignment_s7("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta", "Segment 7, n=29, Snn=")
 
 Segment7_snn$plot
 
@@ -1154,7 +1169,7 @@ Segment7_snn$plot
 
 
 ################################################################################
-# Segment 8 Snn - Re-done on 02.05.26 w/all samples
+# Segment 8 Snn
 
 # -------------------------------
 # Metadata (sample status)
@@ -1171,12 +1186,12 @@ metadata <- metadata %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s8 <-  function (
-    fasta_msa = "../.././Alignments/A3_s8_29_CDS_Only_aln.fasta",
-    prefix="A3_s8_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s8_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "../.././Alignments/A3_s8_n29_CDS_Only_aln.fasta"
-  # prefix="A3_s8_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s8_n33_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -1305,7 +1320,7 @@ calculate_snn_s8 <- function(distance_matrix, groups_vector) {
   Snn 
 }
 
-Segment8_snn <- process_alignment_s8("../.././Alignments/A3_s8_n29_CDS_Only_aln.fasta", "Segment 8, n=29, Snn=")
+Segment8_snn <- process_alignment_s8("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta", "Segment 8, n=33, Snn=")
 
 Segment8_snn$plot
 
@@ -1315,7 +1330,7 @@ Segment8_snn$plot
 
 
 ################################################################################
-# Segment 9 Snn - Re-done on 02.05.26 w/all samples
+# Segment 9 Snn
 
 # -------------------------------
 # Metadata (sample status)
@@ -1332,12 +1347,12 @@ metadata <- metadata %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s9 <-  function (
-    fasta_msa = "../.././Alignments/A3_s9_n29_CDS_Only_aln.fasta",
-    prefix="A3_s9_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s9_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "../.././Alignments/A3_s9_n29_CDS_Only_aln.fasta"
-  # prefix="A3_s9_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s9_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -1466,7 +1481,7 @@ calculate_snn_s9 <- function(distance_matrix, groups_vector) {
   Snn 
 }
 
-Segment9_snn <- process_alignment_s9("../.././Alignments/A3_s9_n29_CDS_Only_aln.fasta", "Segment 9, n=29, Snn=")
+Segment9_snn <- process_alignment_s9("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta", "Segment 9, n=31, Snn=")
 
 Segment9_snn$plot
 
@@ -1476,7 +1491,7 @@ Segment9_snn$plot
 
 
 ################################################################################
-# Segment 10 Snn - Re-done on 02.05.26 w/all samples
+# Segment 10 Snn
 
 # -------------------------------
 # Metadata (sample status)
@@ -1493,12 +1508,12 @@ metadata <- metadata %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s10 <-  function (
-    fasta_msa = "../.././Alignments/A3_s10_n29_CDS_Only_aln.fasta",
-    prefix="A3_s10_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s10_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "../.././Alignments/A3_s10_n29_CDS_Only_aln.fasta"
-  # prefix="A3_s10_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s10_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -1627,7 +1642,7 @@ calculate_snn_s10 <- function(distance_matrix, groups_vector) {
   Snn 
 }
 
-Segment10_snn <- process_alignment_s10("../.././Alignments/A3_s10_n29_CDS_Only_aln.fasta", "Segment 10, n=29, Snn=")
+Segment10_snn <- process_alignment_s10("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta", "Segment 10, n=31, Snn=")
 
 Segment10_snn$plot
 
@@ -1646,18 +1661,20 @@ snn_supp_table <-
   tibble( segment = c("BTV Segment 1", "BTV Segment 2", "BTV Segment 3", 
                       "BTV Segment 4", "BTV Segment 5", "BTV Segment 6", 
                       "BTV Segment 7", "BTV Segment 8", "BTV Segment 9", "BTV Segment 10"),
+                n = c("s1 = n29", "s2 = n29", "s3 = n30",
+                      "s4 = n31", "s5 = n31", "s6 = n33", 
+                      "s7 = n29", "s8 = n33", "s9 = n31", "s10 = n31"),
           snn  = c(Segment1_snn$snn, Segment2_snn$snn, Segment3_snn$snn, 
                    Segment4_snn$snn, Segment5_snn$snn, Segment6_snn$snn, 
                    Segment7_snn$snn, Segment8_snn$snn, Segment9_snn$snn, Segment10_snn$snn),
           pval = c(Segment1_snn$pval, Segment2_snn$pval, Segment3_snn$pval, 
                    Segment4_snn$pval, Segment5_snn$pval, Segment6_snn$pval, 
                    Segment7_snn$pval, Segment8_snn$pval, Segment9_snn$pval, Segment10_snn$pval)) %>%
-                    mutate(pval_bonf = p.adjust(pval, method = "bonferroni", n = length(pval)))
+  mutate(pval_bonf = p.adjust(pval, method = "bonferroni", n = length(pval)))
 
 write.table(snn_supp_table, 
-            file="all_segments_WGOnly_n29_status_supplemental_table_snn_020526.txt",
+            file="rerun_NO_Clinical_20_GenBank_Seqs_STATUS_supplemental_table_snn_061826.txt",
             quote=F, sep="\t", row.names=F)
-
 ################################################################################ END
 
 
@@ -1709,7 +1726,7 @@ write.table(snn_supp_table,
 
 
 ################################################################################
-# Segment 1 Snn - testing species as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 1 Snn - testing species as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -1726,11 +1743,11 @@ metadata_species <- metadata_species %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s1_species <-  function (
-    fasta_msa = "../.././Alignments/A3_s1_n29_CDS_Only_aln.fasta", 
+    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", 
     prefix="A3_s1_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "../.././Alignments/A3_s1_n29_CDS_Only_aln.fasta"
+  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta"
   # prefix="A3_s1_n29_CDS_only_aln"
   
   # read in sequences
@@ -1806,7 +1823,7 @@ process_alignment_s1_species <-  function (
   
   
   return(list(snn    = this_snn,
-             #  pvalue = this_snn_p_val_bonf,
+              #  pvalue = this_snn_p_val_bonf,
               pvalue = this_snn_p_val,
               plot   = plot_snn,
               text   = snn_text))
@@ -1860,7 +1877,7 @@ calculate_snn_s1_species <- function(distance_matrix, species_vector) {
   Snn 
 }
 
-Segment1_species_snn <- process_alignment_s1_species(".././Alignments/A3_s1_n29_CDS_Only_aln.fasta", "Segment 1 - Species, n=29, Snn=")
+Segment1_species_snn <- process_alignment_s1_species("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", "Segment 1 - Species, n=29, Snn=")
 
 Segment1_species_snn$plot
 
@@ -1869,7 +1886,7 @@ Segment1_species_snn$plot
 
 
 ################################################################################
-# Segment 1 Snn - testing serotype as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 1 Snn - testing serotype as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -1886,11 +1903,11 @@ metadata_serotype <- metadata_serotype %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s1_serotype <-  function (
-    fasta_msa = ".././Alignments/A3_s1_n29_CDS_Only_aln.fasta", 
+    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", 
     prefix="A3_s1_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s1_n29_CDS_Only_aln.fasta"
+  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta"
   # prefix="A3_s1_n29_CDS_only_aln"
   
   # read in sequences
@@ -2020,7 +2037,7 @@ calculate_snn_s1_serotype <- function(distance_matrix, serotype_vector) {
   Snn 
 }
 
-Segment1_serotype_snn <- process_alignment_s1_serotype(".././Alignments/A3_s1_n29_CDS_Only_aln.fasta", "Segment 1 - Serotype, n=29, Snn=")
+Segment1_serotype_snn <- process_alignment_s1_serotype("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", "Segment 1 - Serotype, n=29, Snn=")
 
 Segment1_serotype_snn$plot
 
@@ -2029,7 +2046,7 @@ Segment1_serotype_snn$plot
 
 
 ################################################################################
-# Segment 1 Snn - testing year as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 1 Snn - testing year as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -2046,11 +2063,11 @@ metadata_year <- metadata_year %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s1_year <-  function (
-    fasta_msa = ".././Alignments/A3_s1_n29_CDS_Only_aln.fasta", 
+    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", 
     prefix="A3_s1_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s1_n29_CDS_Only_aln.fasta"
+  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta"
   # prefix="A3_s1_n29_CDS_only_aln"
   
   # read in sequences
@@ -2180,7 +2197,7 @@ calculate_snn_s1_year <- function(distance_matrix, year_vector) {
   Snn 
 }
 
-Segment1_year_snn <- process_alignment_s1_year(".././Alignments/A3_s1_n29_CDS_Only_aln.fasta", "Segment 1 - Year, n=29, Snn=")
+Segment1_year_snn <- process_alignment_s1_year("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", "Segment 1 - Year, n=29, Snn=")
 
 Segment1_year_snn$plot
 
@@ -2189,7 +2206,7 @@ Segment1_year_snn$plot
 
 
 ################################################################################
-# Segment 1 Snn - testing age as lurking variable - Re-done on 02.05.26 w/all samples & no NAs
+# Segment 1 Snn - testing age as lurking variable & no NAs
 # There is not enough age representation across groups to reliably calculate Snn (TD 10.03.25)
 
 # -------------------------------
@@ -2206,11 +2223,11 @@ metadata_age <- metadata_age %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s1_age <-  function (
-    fasta_msa = ".././Alignments/A3_s1_n29_CDS_Only_aln.fasta", 
+    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", 
     prefix="A3_s1_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s1_n29_CDS_Only_aln.fasta"
+  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta"
   # prefix="A3_s1_n29_CDS_only_aln"
   
   # read in sequences
@@ -2339,7 +2356,7 @@ calculate_snn_s1_age <- function(distance_matrix, age_vector) {
   Snn 
 }
 
-Segment1_age_snn <- process_alignment_s1_age(".././Alignments/A3_s1_n29_CDS_Only_aln.fasta", "Segment 1 - Animal Age, n=29, Snn=")
+Segment1_age_snn <- process_alignment_s1_age("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", "Segment 1 - Animal Age, n=29, Snn=")
 
 Segment1_age_snn$plot
 
@@ -2348,7 +2365,7 @@ Segment1_age_snn$plot
 
 
 ################################################################################
-# Segment 1 Snn - testing sex as lurking variable - Re-done on 02.05.26 w/all samples & no NAs
+# Segment 1 Snn - testing sex as lurking variable & no NAs
 
 # -------------------------------
 # Metadata (sample status)
@@ -2365,11 +2382,11 @@ metadata_sex <- metadata_sex %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s1_sex <-  function (
-    fasta_msa = ".././Alignments/A3_s1_n29_CDS_Only_aln.fasta", 
+    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", 
     prefix="A3_s1_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s1_n29_CDS_Only_aln.fasta"
+  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta"
   # prefix="A3_s1_n29_CDS_only_aln"
   
   # read in sequences
@@ -2499,13 +2516,174 @@ calculate_snn_s1_sex <- function(distance_matrix, sex_vector) {
   Snn 
 }
 
-Segment1_sex_snn <- process_alignment_s1_sex(".././Alignments/A3_s1_n29_CDS_Only_aln.fasta", "Segment 1 - Animal Sex, n=29, Snn=")
+Segment1_sex_snn <- process_alignment_s1_sex("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", "Segment 1 - Animal Sex, n=29, Snn=")
 
 Segment1_sex_snn$plot
 
 # END Segment 1 Snn - testing sex as lurking variable
 ################################################################################
 
+
+################################################################################
+# Segment 1 Snn - testing state as lurking variable
+
+# -------------------------------
+# Metadata (sample status)
+# -------------------------------
+
+# read in sample metadata including status
+# metadata <- read_excel("A3_Metadata.xlsx")
+metadata <- read_excel("../../../A3_Metadata_All.xlsx")
+
+# pull out just the columns we need and remove any NA variables
+metadata_state <- metadata %>% select(accession = accession, state, segment_1)
+metadata_state <- metadata_state %>% drop_na(segment_1)
+
+num_permutations <- 5000
+
+process_alignment_s1_state <-  function (
+    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", 
+    prefix="A3_s1_n29_CDS_only_aln") {
+  
+  # DEBUG
+  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s1_n29_CDS_only_aln"
+  
+  # read in sequences
+  msa <- read.dna(fasta_msa, format="fasta")
+  
+  # relabel sequences with just the first part
+  accessions <- str_extract(labels(msa), ".*")
+  
+  # update labels: shorten to just accessions
+  rownames(msa) <- accessions
+  
+  # drop sequences for which we could not identify an accession
+  msa <- msa[!(is.na(accessions)), ]
+  accessions <- accessions[!(is.na(accessions))]
+  
+  # calculate distances
+  # TN93 distance model
+  dist_model = "TN93" 
+  msa_dist <- as.matrix(dist.dna(msa, model = dist_model))
+  
+  acc_loc <- tibble(accession = rownames(msa_dist))
+  # this will make groups in order of matrix accession
+  acc_loc <- left_join(acc_loc, metadata_state)  
+  # create a vector of the group matching the order of the distance matrix
+  states <- acc_loc %>% pull(state)
+  
+  # calculate Snn from distance matrix and sample metadata_species
+  this_snn <- calculate_snn_s1_state(msa_dist, states)
+  
+  perm_snns <- c()
+  
+  # do permutation testing
+  for (p in 1:num_permutations) {
+    # first, scramble groups using sampling without replacement
+    # using sampling without replacement will keep the # of samples from each
+    # location (group) the same between permutations, as specified in Hudson 2011
+    scrambled_groups  <- sample(states, replace=F)
+    perm_snn             <- calculate_snn_s1_state(msa_dist, scrambled_groups)
+    perm_snns            <- c(perm_snns, perm_snn)
+  }
+  
+  # calculate p-value from Snns from permutation tests
+  # DO NOT adjust p-value for multiple comparisons (n=10) with Bonferroni correction
+  num_tests <- 10
+  this_snn_p_val <- sum(perm_snns >= this_snn) / num_permutations
+  
+  if (this_snn_p_val == 0) {
+    this_snn_p_val_sci <- sprintf("%0.1e", 1/num_permutations)
+    this_snn_p_val <- paste0("<", this_snn_p_val_sci)
+  }
+  
+  # this_snn_p_val_bonf <- min(this_snn_p_val * num_tests, 1)
+  
+  snn_text <- paste0(prefix, 
+                     " ", 
+                     sprintf("%0.3f", this_snn), 
+                     " p = ", 
+                     this_snn_p_val)
+  print(snn_text)
+  
+  # plot a histogram of permutation pvalues and this 
+  perm_snns_tibble <- tibble(snn = perm_snns)
+  plot_snn <- ggplot(perm_snns_tibble) +
+    geom_histogram(aes(x=snn), bins=100, fill="grey20", color=NA) +
+    geom_vline(xintercept = this_snn, color="red", linewidth = 0.5) +
+    annotate("text", x=0.00, y=200, label=snn_text, hjust = 0, size=3) +
+    xlab("Snn") +
+    ylab("Count") +
+    theme_bw(base_size = 14)
+  
+  ggsave(paste0(prefix, "_Snn_permutation_testing.pdf"), 
+         units="in", width=7.5, height=5)
+  
+  
+  return(list(snn    = this_snn,
+              # pvalue = this_snn_p_val_bonf,
+              pvalue = this_snn_p_val,
+              plot   = plot_snn,
+              text   = snn_text))
+}
+
+calculate_snn_s1_state <- function(distance_matrix, state_vector) {
+  
+  Snn <- 0
+  
+  # DEBUG
+  # distance_matrix = btv_msa_dist
+  # groups_vector = group_loc
+  
+  # iterate through samples to calculate Snn
+  # there is probably a more R way to do this but I am doing it this way
+  # because it makes sense to me
+  num_samples <- nrow(distance_matrix)
+  
+  # Loop through each individual
+  for (i in 1:num_samples) {
+    
+    # get the row of distances for this sample
+    row = distance_matrix[i,]
+    
+    # exclude self
+    row[i] <- NA  
+    
+    # for each row, find the minimum distance (ignore NA)
+    min_val <- min(row, na.rm = TRUE)
+    
+    # this is a vector of indices of nearest neighbors, with distance == minimum_distance
+    nn_i <- which(row == min_val)
+    
+    # this is the number of nearest neighbors with the same group as sample i
+    num_shared_group <- sum(state_vector[nn_i] == state_vector[i])
+    
+    # this is the number of nearest neighbors (regardless of group)
+    num_NN         <- length(nn_i)
+    
+    # the contribution to SNN for this sample = num_NN_with_shared_loc / num_NN / num_samples
+    fraction_shared_group <- (num_shared_group / num_NN) / num_samples
+    
+    if (is.na(fraction_shared_group)) {
+      message(paste0("Warning, sample ", names(row)[i], " produced an NA value"))
+    }
+    
+    Snn <- Snn + fraction_shared_group
+  }
+  
+  # return Snn
+  Snn 
+}
+
+Segment1_state_snn <- process_alignment_s1_state("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", "Segment 1 - State, n=29, Snn=")
+
+Segment1_state_snn$plot
+
+# END Segment 1 Snn - testing state as lurking variable
+################################################################################
+
+################################################################################
 
 # END SEGMENT 1
 
@@ -2534,7 +2712,7 @@ Segment1_sex_snn$plot
 
 
 ################################################################################
-# Segment 2 Snn - testing species as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 2 Snn - testing species as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -2551,11 +2729,11 @@ metadata_species <- metadata_species %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s2_species <-  function (
-    fasta_msa = ".././Alignments/A3_s2_n29_CDS_Only_aln.fasta", 
+    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", 
     prefix="A3_s2_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s2_n29_CDS_Only_aln.fasta"
+  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta"
   # prefix="A3_s2_n29_CDS_only_aln"
   
   # read in sequences
@@ -2685,7 +2863,7 @@ calculate_snn_s2_species <- function(distance_matrix, species_vector) {
   Snn 
 }
 
-Segment2_species_snn <- process_alignment_s2_species(".././Alignments/A3_s2_n29_CDS_Only_aln.fasta", "Segment 2 - Species, n=29, Snn=")
+Segment2_species_snn <- process_alignment_s2_species("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", "Segment 2 - Species, n=29, Snn=")
 
 Segment2_species_snn$plot
 
@@ -2694,7 +2872,7 @@ Segment2_species_snn$plot
 
 
 ################################################################################
-# Segment 2 Snn - testing serotype as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 2 Snn - testing serotype as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -2711,11 +2889,11 @@ metadata_serotype <- metadata_serotype %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s2_serotype <-  function (
-    fasta_msa = ".././Alignments/A3_s2_n29_CDS_Only_aln.fasta", 
+    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", 
     prefix="A3_s2_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s2_n29_CDS_Only_aln.fasta"
+  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta"
   # prefix="A3_s2_n29_CDS_only_aln"
   
   # read in sequences
@@ -2845,7 +3023,7 @@ calculate_snn_s2_serotype <- function(distance_matrix, serotype_vector) {
   Snn 
 }
 
-Segment2_serotype_snn <- process_alignment_s2_serotype(".././Alignments/A3_s2_n29_CDS_Only_aln.fasta", "Segment 2 - Serotype, n=29, Snn=")
+Segment2_serotype_snn <- process_alignment_s2_serotype("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", "Segment 2 - Serotype, n=29, Snn=")
 
 Segment2_serotype_snn$plot
 
@@ -2854,7 +3032,7 @@ Segment2_serotype_snn$plot
 
 
 ################################################################################
-# Segment 2 Snn - testing year as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 2 Snn - testing year as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -2871,11 +3049,11 @@ metadata_year <- metadata_year %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s2_year <-  function (
-    fasta_msa = ".././Alignments/A3_s2_n29_CDS_Only_aln.fasta", 
+    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", 
     prefix="A3_s2_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s2_n29_CDS_Only_aln.fasta"
+  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta"
   # prefix="A3_s2_n29_CDS_only_aln"
   
   # read in sequences
@@ -3005,7 +3183,7 @@ calculate_snn_s2_year <- function(distance_matrix, year_vector) {
   Snn 
 }
 
-Segment2_year_snn <- process_alignment_s2_year(".././Alignments/A3_s2_n29_CDS_Only_aln.fasta", "Segment 2 - Year, n=29, Snn=")
+Segment2_year_snn <- process_alignment_s2_year("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", "Segment 2 - Year, n=29, Snn=")
 
 Segment2_year_snn$plot
 
@@ -3014,7 +3192,7 @@ Segment2_year_snn$plot
 
 
 ################################################################################
-# Segment 2 Snn - testing age as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 2 Snn - testing age as lurking variable
 # There is not enough age representation across groups to reliably calculate Snn (TD 10.03.25)
 
 # -------------------------------
@@ -3025,16 +3203,17 @@ Segment2_year_snn$plot
 metadata <- read_excel("../../../A3_Metadata_All.xlsx")
 
 # pull out just the columns we need
-metadata_age <- metadata %>% select(accession = accession, age)
+metadata_age <- metadata %>% select(accession = accession, age, segment_2)
+metadata_age <- metadata_age %>% drop_na()
 
 num_permutations <- 5000
 
 process_alignment_s2_age <-  function (
-    fasta_msa = ".././Alignments/A3_s2_n29_CDS_Only_aln.fasta", 
+    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", 
     prefix="A3_s2_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s2_n29_CDS_Only_aln.fasta"
+  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta"
   # prefix="A3_s2_n29_CDS_only_aln"
   
   # read in sequences
@@ -3163,7 +3342,7 @@ calculate_snn_s2_age <- function(distance_matrix, age_vector) {
   Snn 
 }
 
-Segment2_age_snn <- process_alignment_s2_age(".././Alignments/A3_s2_n29_CDS_Only_aln.fasta", "Segment 2 - Animal Age, n=29, Snn=")
+Segment2_age_snn <- process_alignment_s2_age("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", "Segment 2 - Animal Age, n=29, Snn=")
 
 Segment2_age_snn$plot
 
@@ -3172,7 +3351,7 @@ Segment2_age_snn$plot
 
 
 ################################################################################
-# Segment 2 Snn - testing sex as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 2 Snn - testing sex as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -3189,11 +3368,11 @@ metadata_sex <- metadata_sex %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s2_sex <-  function (
-    fasta_msa = ".././Alignments/A3_s2_n29_CDS_Only_aln.fasta", 
+    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", 
     prefix="A3_s2_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s2_n29_CDS_Only_aln.fasta"
+  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta"
   # prefix="A3_s2_n29_CDS_only_aln"
   
   # read in sequences
@@ -3323,11 +3502,171 @@ calculate_snn_s2_sex <- function(distance_matrix, sex_vector) {
   Snn 
 }
 
-Segment2_sex_snn <- process_alignment_s2_sex(".././Alignments/A3_s2_n29_CDS_Only_aln.fasta", "Segment 2 - Animal Sex, n=29, Snn=")
+Segment2_sex_snn <- process_alignment_s2_sex("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", "Segment 2 - Animal Sex, n=29, Snn=")
 
 Segment2_sex_snn$plot
 
 # END Segment 2 Snn - testing sex as lurking variable
+################################################################################
+
+
+################################################################################
+# Segment 2 Snn - testing state as lurking variable
+
+# -------------------------------
+# Metadata (sample status)
+# -------------------------------
+
+# read in sample metadata including status
+# metadata <- read_excel("A3_Metadata.xlsx")
+metadata <- read_excel("../../../A3_Metadata_All.xlsx")
+
+# pull out just the columns we need and remove any NA variables
+metadata_state <- metadata %>% select(accession = accession, state, segment_2)
+metadata_state <- metadata_state %>% drop_na(segment_2)
+
+num_permutations <- 5000
+
+process_alignment_s2_state <-  function (
+    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", 
+    prefix="A3_s2_n29_CDS_only_aln") {
+  
+  # DEBUG
+  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s2_n29_CDS_only_aln"
+  
+  # read in sequences
+  msa <- read.dna(fasta_msa, format="fasta")
+  
+  # relabel sequences with just the first part
+  accessions <- str_extract(labels(msa), ".*")
+  
+  # update labels: shorten to just accessions
+  rownames(msa) <- accessions
+  
+  # drop sequences for which we could not identify an accession
+  msa <- msa[!(is.na(accessions)), ]
+  accessions <- accessions[!(is.na(accessions))]
+  
+  # calculate distances
+  # TN93 distance model
+  dist_model = "TN93" 
+  msa_dist <- as.matrix(dist.dna(msa, model = dist_model))
+  
+  acc_loc <- tibble(accession = rownames(msa_dist))
+  # this will make groups in order of matrix accession
+  acc_loc <- left_join(acc_loc, metadata_state)  
+  # create a vector of the group matching the order of the distance matrix
+  states <- acc_loc %>% pull(state)
+  
+  # calculate Snn from distance matrix and sample metadata_species
+  this_snn <- calculate_snn_s2_state(msa_dist, states)
+  
+  perm_snns <- c()
+  
+  # do permutation testing
+  for (p in 1:num_permutations) {
+    # first, scramble groups using sampling without replacement
+    # using sampling without replacement will keep the # of samples from each
+    # location (group) the same between permutations, as specified in Hudson 2011
+    scrambled_groups  <- sample(states, replace=F)
+    perm_snn             <- calculate_snn_s2_state(msa_dist, scrambled_groups)
+    perm_snns            <- c(perm_snns, perm_snn)
+  }
+  
+  # calculate p-value from Snns from permutation tests
+  # DO NOT adjust p-value for multiple comparisons (n=10) with Bonferroni correction
+  num_tests <- 10
+  this_snn_p_val <- sum(perm_snns >= this_snn) / num_permutations
+  
+  if (this_snn_p_val == 0) {
+    this_snn_p_val_sci <- sprintf("%0.1e", 1/num_permutations)
+    this_snn_p_val <- paste0("<", this_snn_p_val_sci)
+  }
+  
+  # this_snn_p_val_bonf <- min(this_snn_p_val * num_tests, 1)
+  
+  snn_text <- paste0(prefix, 
+                     " ", 
+                     sprintf("%0.3f", this_snn), 
+                     " p = ", 
+                     this_snn_p_val)
+  print(snn_text)
+  
+  # plot a histogram of permutation pvalues and this 
+  perm_snns_tibble <- tibble(snn = perm_snns)
+  plot_snn <- ggplot(perm_snns_tibble) +
+    geom_histogram(aes(x=snn), bins=100, fill="grey20", color=NA) +
+    geom_vline(xintercept = this_snn, color="red", linewidth = 0.5) +
+    annotate("text", x=0.00, y=200, label=snn_text, hjust = 0, size=3) +
+    xlab("Snn") +
+    ylab("Count") +
+    theme_bw(base_size = 14)
+  
+  ggsave(paste0(prefix, "_Snn_permutation_testing.pdf"), 
+         units="in", width=7.5, height=5)
+  
+  
+  return(list(snn    = this_snn,
+              # pvalue = this_snn_p_val_bonf,
+              pvalue = this_snn_p_val,
+              plot   = plot_snn,
+              text   = snn_text))
+}
+
+calculate_snn_s2_state <- function(distance_matrix, state_vector) {
+  
+  Snn <- 0
+  
+  # DEBUG
+  # distance_matrix = btv_msa_dist
+  # groups_vector = group_loc
+  
+  # iterate through samples to calculate Snn
+  # there is probably a more R way to do this but I am doing it this way
+  # because it makes sense to me
+  num_samples <- nrow(distance_matrix)
+  
+  # Loop through each individual
+  for (i in 1:num_samples) {
+    
+    # get the row of distances for this sample
+    row = distance_matrix[i,]
+    
+    # exclude self
+    row[i] <- NA  
+    
+    # for each row, find the minimum distance (ignore NA)
+    min_val <- min(row, na.rm = TRUE)
+    
+    # this is a vector of indices of nearest neighbors, with distance == minimum_distance
+    nn_i <- which(row == min_val)
+    
+    # this is the number of nearest neighbors with the same group as sample i
+    num_shared_group <- sum(state_vector[nn_i] == state_vector[i])
+    
+    # this is the number of nearest neighbors (regardless of group)
+    num_NN         <- length(nn_i)
+    
+    # the contribution to SNN for this sample = num_NN_with_shared_loc / num_NN / num_samples
+    fraction_shared_group <- (num_shared_group / num_NN) / num_samples
+    
+    if (is.na(fraction_shared_group)) {
+      message(paste0("Warning, sample ", names(row)[i], " produced an NA value"))
+    }
+    
+    Snn <- Snn + fraction_shared_group
+  }
+  
+  # return Snn
+  Snn 
+}
+
+Segment2_state_snn <- process_alignment_s2_state("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", "Segment 2 - State, n=29, Snn=")
+
+Segment2_state_snn$plot
+
+# END Segment 2 Snn - testing state as lurking variable
 ################################################################################
 
 
@@ -3368,7 +3707,7 @@ Segment2_sex_snn$plot
 
 
 ################################################################################
-# Segment 3 Snn - testing species as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 3 Snn - testing species as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -3385,12 +3724,12 @@ metadata_species <- metadata_species %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s3_species <-  function (
-    fasta_msa = ".././Alignments/A3_s3_n29_CDS_Only_aln.fasta",
-    prefix="A3_s3_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s3_n30_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s3_n29_CDS_Only_aln.fasta"
-  # prefix="A3_s3_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s3_n30_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -3519,7 +3858,7 @@ calculate_snn_s3_species <- function(distance_matrix, species_vector) {
   Snn 
 }
 
-Segment3_species_snn <- process_alignment_s3_species(".././Alignments/A3_s3_n29_CDS_Only_aln.fasta", "Segment 3 - Species, n=29, Snn=")
+Segment3_species_snn <- process_alignment_s3_species("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta", "Segment 3 - Species, n=30, Snn=")
 
 Segment3_species_snn$plot
 
@@ -3528,7 +3867,7 @@ Segment3_species_snn$plot
 
 
 ################################################################################
-# Segment 3 Snn - testing serotype as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 3 Snn - testing serotype as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -3545,12 +3884,12 @@ metadata_serotype <- metadata_serotype %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s3_serotype <-  function (
-    fasta_msa = ".././Alignments/A3_s3_n29_CDS_only_aln.fasta",
-    prefix="A3_s3_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s3_n30_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s3_n29_CDS_only_aln.fasta"
-  # prefix="A3_s3_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s3_n30_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -3679,7 +4018,7 @@ calculate_snn_s3_serotype <- function(distance_matrix, serotype_vector) {
   Snn 
 }
 
-Segment3_serotype_snn <- process_alignment_s3_serotype(".././Alignments/A3_s3_n29_CDS_only_aln.fasta", "Segment 3 - Serotype, n=29, Snn=")
+Segment3_serotype_snn <- process_alignment_s3_serotype("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta", "Segment 3 - Serotype, n=30, Snn=")
 
 Segment3_serotype_snn$plot
 
@@ -3688,7 +4027,7 @@ Segment3_serotype_snn$plot
 
 
 ################################################################################
-# Segment 3 Snn - testing year as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 3 Snn - testing year as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -3705,12 +4044,12 @@ metadata_year <- metadata_year %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s3_year <-  function (
-    fasta_msa = ".././Alignments/A3_s3_n29_CDS_only_aln.fasta",
-    prefix="A3_s3_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s3_n30_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s3_n29_CDS_only_aln.fasta"
-  # prefix="A3_s3_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s3_n30_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -3839,7 +4178,7 @@ calculate_snn_s3_year <- function(distance_matrix, year_vector) {
   Snn 
 }
 
-Segment3_year_snn <- process_alignment_s3_year(".././Alignments/A3_s3_n29_CDS_only_aln.fasta", "Segment 3 - Year, n=29, Snn=")
+Segment3_year_snn <- process_alignment_s3_year("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta", "Segment 3 - Year, n=30, Snn=")
 
 Segment3_year_snn$plot
 
@@ -3848,7 +4187,7 @@ Segment3_year_snn$plot
 
 
 ################################################################################
-# Segment 3 Snn - testing age as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 3 Snn - testing age as lurking variable
 # There is not enough age representation across groups to reliably calculate Snn (TD 10.03.25)
 
 # -------------------------------
@@ -3859,17 +4198,18 @@ Segment3_year_snn$plot
 metadata <- read_excel("../../../A3_Metadata_All.xlsx")
 
 # pull out just the columns we need
-metadata_age <- metadata %>% select(accession = accession, age)
+metadata_age <- metadata %>% select(accession = accession, age, segment_3)
+metadata_age <- metadata_age %>% drop_na()
 
 num_permutations <- 5000
 
 process_alignment_s3_age <-  function (
-    fasta_msa = ".././Alignments/A3_s3_n29_CDS_only_aln.fasta",
-    prefix="A3_s3_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s3_n30_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s3_n29_CDS_only_aln.fasta"
-  # prefix="A3_s3_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s3_n30_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -3997,7 +4337,7 @@ calculate_snn_s3_age <- function(distance_matrix, age_vector) {
   Snn 
 }
 
-Segment3_age_snn <- process_alignment_s3_age(".././Alignments/A3_s3_n29_CDS_only_aln.fasta", "Segment 3 - Animal Age, n=29, Snn=")
+Segment3_age_snn <- process_alignment_s3_age("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta", "Segment 3 - Animal Age, n=30, Snn=")
 
 Segment3_age_snn$plot
 
@@ -4006,7 +4346,7 @@ Segment3_age_snn$plot
 
 
 ################################################################################
-# Segment 3 Snn - testing sex as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 3 Snn - testing sex as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -4023,12 +4363,12 @@ metadata_sex <- metadata_sex %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s3_sex <-  function (
-    fasta_msa = ".././Alignments/A3_s3_n29_CDS_only_aln.fasta",
-    prefix="A3_s3_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s3_n30_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s3_n29_CDS_only_aln.fasta"
-  # prefix="A3_s3_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s3_n30_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -4157,11 +4497,170 @@ calculate_snn_s3_sex <- function(distance_matrix, sex_vector) {
   Snn 
 }
 
-Segment3_sex_snn <- process_alignment_s3_sex(".././Alignments/A3_s3_n29_CDS_only_aln.fasta", "Segment 3 - Animal Sex, n=29, Snn=")
+Segment3_sex_snn <- process_alignment_s3_sex("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta", "Segment 3 - Animal Sex, n=30, Snn=")
 
 Segment3_sex_snn$plot
 
 # END Segment 3 Snn - testing sex as lurking variable
+################################################################################
+
+################################################################################
+# Segment 3 Snn - testing state as lurking variable
+
+# -------------------------------
+# Metadata (sample status)
+# -------------------------------
+
+# read in sample metadata including status
+# metadata <- read_excel("A3_Metadata.xlsx")
+metadata <- read_excel("../../../A3_Metadata_All.xlsx")
+
+# pull out just the columns we need and remove any NA variables
+metadata_state <- metadata %>% select(accession = accession, state, segment_3)
+metadata_state <- metadata_state %>% drop_na()
+
+num_permutations <- 5000
+
+process_alignment_s3_state <-  function (
+    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s3_n30_CDS_only_aln") {
+  
+  # DEBUG
+  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s3_n30_CDS_only_aln"
+  
+  # read in sequences
+  msa <- read.dna(fasta_msa, format="fasta")
+  
+  # relabel sequences with just the first part
+  accessions <- str_extract(labels(msa), ".*")
+  
+  # update labels: shorten to just accessions
+  rownames(msa) <- accessions
+  
+  # drop sequences for which we could not identify an accession
+  msa <- msa[!(is.na(accessions)), ]
+  accessions <- accessions[!(is.na(accessions))]
+  
+  # calculate distances
+  # TN93 distance model
+  dist_model = "TN93" 
+  msa_dist <- as.matrix(dist.dna(msa, model = dist_model))
+  
+  acc_loc <- tibble(accession = rownames(msa_dist))
+  # this will make groups in order of matrix accession
+  acc_loc <- left_join(acc_loc, metadata_state)  
+  # create a vector of the group matching the order of the distance matrix
+  states <- acc_loc %>% pull(state)
+  
+  # calculate Snn from distance matrix and sample metadata_species
+  this_snn <- calculate_snn_s3_state(msa_dist, states)
+  
+  perm_snns <- c()
+  
+  # do permutation testing
+  for (p in 1:num_permutations) {
+    # first, scramble groups using sampling without replacement
+    # using sampling without replacement will keep the # of samples from each
+    # location (group) the same between permutations, as specified in Hudson 2011
+    scrambled_groups  <- sample(states, replace=F)
+    perm_snn             <- calculate_snn_s3_state(msa_dist, scrambled_groups)
+    perm_snns            <- c(perm_snns, perm_snn)
+  }
+  
+  # calculate p-value from Snns from permutation tests
+  # DO NOT adjust p-value for multiple comparisons (n=10) with Bonferroni correction
+  num_tests <- 10
+  this_snn_p_val <- sum(perm_snns >= this_snn) / num_permutations
+  
+  if (this_snn_p_val == 0) {
+    this_snn_p_val_sci <- sprintf("%0.1e", 1/num_permutations)
+    this_snn_p_val <- paste0("<", this_snn_p_val_sci)
+  }
+  
+  # this_snn_p_val_bonf <- min(this_snn_p_val * num_tests, 1)
+  
+  snn_text <- paste0(prefix, 
+                     " ", 
+                     sprintf("%0.3f", this_snn), 
+                     " p = ", 
+                     this_snn_p_val)
+  print(snn_text)
+  
+  # plot a histogram of permutation pvalues and this 
+  perm_snns_tibble <- tibble(snn = perm_snns)
+  plot_snn <- ggplot(perm_snns_tibble) +
+    geom_histogram(aes(x=snn), bins=100, fill="grey20", color=NA) +
+    geom_vline(xintercept = this_snn, color="red", linewidth = 0.5) +
+    annotate("text", x=0.00, y=200, label=snn_text, hjust = 0, size=3) +
+    xlab("Snn") +
+    ylab("Count") +
+    theme_bw(base_size = 14)
+  
+  ggsave(paste0(prefix, "_Snn_permutation_testing.pdf"), 
+         units="in", width=7.5, height=5)
+  
+  
+  return(list(snn    = this_snn,
+              # pvalue = this_snn_p_val_bonf,
+              pvalue = this_snn_p_val,
+              plot   = plot_snn,
+              text   = snn_text))
+}
+
+calculate_snn_s3_state <- function(distance_matrix, state_vector) {
+  
+  Snn <- 0
+  
+  # DEBUG
+  # distance_matrix = btv_msa_dist
+  # groups_vector = group_loc
+  
+  # iterate through samples to calculate Snn
+  # there is probably a more R way to do this but I am doing it this way
+  # because it makes sense to me
+  num_samples <- nrow(distance_matrix)
+  
+  # Loop through each individual
+  for (i in 1:num_samples) {
+    
+    # get the row of distances for this sample
+    row = distance_matrix[i,]
+    
+    # exclude self
+    row[i] <- NA  
+    
+    # for each row, find the minimum distance (ignore NA)
+    min_val <- min(row, na.rm = TRUE)
+    
+    # this is a vector of indices of nearest neighbors, with distance == minimum_distance
+    nn_i <- which(row == min_val)
+    
+    # this is the number of nearest neighbors with the same group as sample i
+    num_shared_group <- sum(state_vector[nn_i] == state_vector[i])
+    
+    # this is the number of nearest neighbors (regardless of group)
+    num_NN         <- length(nn_i)
+    
+    # the contribution to SNN for this sample = num_NN_with_shared_loc / num_NN / num_samples
+    fraction_shared_group <- (num_shared_group / num_NN) / num_samples
+    
+    if (is.na(fraction_shared_group)) {
+      message(paste0("Warning, sample ", names(row)[i], " produced an NA value"))
+    }
+    
+    Snn <- Snn + fraction_shared_group
+  }
+  
+  # return Snn
+  Snn 
+}
+
+Segment3_state_snn <- process_alignment_s3_state("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta", "Segment 3 - State, n=30, Snn=")
+
+Segment3_state_snn$plot
+
+# END Segment 3 Snn - testing state as lurking variable
 ################################################################################
 
 
@@ -4201,7 +4700,7 @@ Segment3_sex_snn$plot
 
 
 ################################################################################
-# Segment 4 Snn - testing species as lurking variable - Done on 02.05.26 w/all samples
+# Segment 4 Snn - testing species as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -4218,12 +4717,12 @@ metadata_species <- metadata_species %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s4_species <-  function (
-    fasta_msa = ".././Alignments/A3_s4_n29_CDS_only_aln.fasta",
-    prefix="A3_s4_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s4_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s4_n29_CDS_only_aln.fasta"
-  # prefix="A3_s4_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s4_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -4352,7 +4851,7 @@ calculate_snn_s4_species <- function(distance_matrix, species_vector) {
   Snn 
 }
 
-Segment4_species_snn <- process_alignment_s4_species(".././Alignments/A3_s4_n29_CDS_only_aln.fasta", "Segment 4 - Species, n=29, Snn=")
+Segment4_species_snn <- process_alignment_s4_species("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta", "Segment 4 - Species, n=31, Snn=")
 
 Segment4_species_snn$plot
 
@@ -4361,7 +4860,7 @@ Segment4_species_snn$plot
 
 
 ################################################################################
-# Segment 4 Snn - testing serotype as lurking variable - Done on 02.05.26 w/all samples
+# Segment 4 Snn - testing serotype as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -4378,12 +4877,12 @@ metadata_serotype <- metadata_serotype %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s4_serotype <-  function (
-    fasta_msa = ".././Alignments/A3_s4_n29_CDS_only_aln.fasta",
-    prefix="A3_s4_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s4_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s4_n29_CDS_only_aln.fasta"
-  # prefix="A3_s4_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s4_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -4512,7 +5011,7 @@ calculate_snn_s4_serotype <- function(distance_matrix, serotype_vector) {
   Snn 
 }
 
-Segment4_serotype_snn <- process_alignment_s4_serotype(".././Alignments/A3_s4_n29_CDS_only_aln.fasta", "Segment 4 - Serotype, n=29, Snn=")
+Segment4_serotype_snn <- process_alignment_s4_serotype("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta", "Segment 4 - Serotype, n=31, Snn=")
 
 Segment4_serotype_snn$plot
 
@@ -4521,7 +5020,7 @@ Segment4_serotype_snn$plot
 
 
 ################################################################################
-# Segment 4 Snn - testing year as lurking variable - Done on 02.05.26 w/all samples
+# Segment 4 Snn - testing year as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -4538,12 +5037,12 @@ metadata_year <- metadata_year %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s4_year <-  function (
-    fasta_msa = ".././Alignments/A3_s4_n29_CDS_only_aln.fasta",
-    prefix="A3_s4_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s4_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s4_n29_CDS_only_aln.fasta"
-  # prefix="A3_s4_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s4_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -4672,7 +5171,7 @@ calculate_snn_s4_year <- function(distance_matrix, year_vector) {
   Snn 
 }
 
-Segment4_year_snn <- process_alignment_s4_year(".././Alignments/A3_s4_n29_CDS_only_aln.fasta", "Segment 4 - Year, n=29, Snn=")
+Segment4_year_snn <- process_alignment_s4_year("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta", "Segment 4 - Year, n=31, Snn=")
 
 Segment4_year_snn$plot
 
@@ -4681,7 +5180,166 @@ Segment4_year_snn$plot
 
 
 ################################################################################
-# Segment 4 Snn - testing sex as lurking variable - Done on 02.05.26 w/all samples
+# Segment 4 Snn - testing age as lurking variable
+# There is not enough age representation across groups to reliably calculate Snn (TD 10.03.25)
+
+# -------------------------------
+# Metadata (sample status)
+# -------------------------------
+
+# read in sample metadata including status
+metadata <- read_excel("../../../A3_Metadata_All.xlsx")
+
+# pull out just the columns we need
+metadata_age <- metadata %>% select(accession = accession, age, segment_4)
+metadata_age <- metadata_age %>% drop_na()
+
+num_permutations <- 5000
+
+process_alignment_s4_age <-  function (
+    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s4_n31_CDS_only_aln") {
+  
+  # DEBUG
+  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s4_n31_CDS_only_aln"
+  
+  # read in sequences
+  msa <- read.dna(fasta_msa, format="fasta")
+  
+  # relabel sequences with just the first part
+  accessions <- str_extract(labels(msa), ".*")
+  
+  # update labels: shorten to just accessions
+  rownames(msa) <- accessions
+  
+  # drop sequences for which we could not identify an accession
+  msa <- msa[!(is.na(accessions)), ]
+  accessions <- accessions[!(is.na(accessions))]
+  
+  # calculate distances
+  # TN93 distance model
+  dist_model = "TN93" 
+  msa_dist <- as.matrix(dist.dna(msa, model = dist_model))
+  
+  acc_loc <- tibble(accession = rownames(msa_dist))
+  # this will make groups in order of matrix accession
+  acc_loc <- left_join(acc_loc, metadata_age)  
+  # create a vector of the group matching the order of the distance matrix
+  ages <- acc_loc %>% pull(age)
+  
+  # calculate Snn from distance matrix and sample metadata_species
+  this_snn <- calculate_snn_s4_age(msa_dist, ages)
+  
+  perm_snns <- c()
+  
+  # do permutation testing
+  for (p in 1:num_permutations) {
+    # first, scramble groups using sampling without replacement
+    # using sampling without replacement will keep the # of samples from each
+    # location (group) the same between permutations, as specified in Hudson 2011
+    scrambled_groups  <- sample(ages, replace=F)
+    perm_snn             <- calculate_snn_s4_age(msa_dist, scrambled_groups)
+    perm_snns            <- c(perm_snns, perm_snn)
+  }
+  
+  # calculate p-value from Snns from permutation tests
+  # adjust p-value for multiple comparisons (n=10) with Bonferroni correction
+  num_tests <- 10
+  this_snn_p_val <- sum(perm_snns >= this_snn) / num_permutations
+  
+  if (this_snn_p_val == 0) {
+    this_snn_p_val_sci <- 1/num_permutations
+    this_snn_p_val <- (this_snn_p_val_sci)
+  }
+  
+  this_snn_p_val_bonf <- min(this_snn_p_val * num_tests, 1)
+  
+  snn_text <- paste0(prefix, 
+                     " ", 
+                     sprintf("%0.3f", this_snn), 
+                     " p = ", 
+                     this_snn_p_val_bonf)
+  print(snn_text)
+  
+  # plot a histogram of permutation pvalues and this 
+  perm_snns_tibble <- tibble(snn = perm_snns)
+  plot_snn <- ggplot(perm_snns_tibble) +
+    geom_histogram(aes(x=snn), bins=100, fill="grey20", color=NA) +
+    geom_vline(xintercept = this_snn, color="red", linewidth = 0.5) +
+    annotate("text", x=0.25, y=200, label=snn_text, hjust = 0, size=3) +
+    xlab("Snn") +
+    ylab("Count") +
+    theme_bw(base_size = 14)
+  
+  ggsave(paste0(prefix, "_Snn_permutation_testing.pdf"), 
+         units="in", width=7.5, height=5)
+  
+  
+  return(list(snn    = this_snn,
+              pvalue = this_snn_p_val_bonf,
+              plot   = plot_snn,
+              text   = snn_text))
+}
+
+calculate_snn_s4_age <- function(distance_matrix, age_vector) {
+  
+  Snn <- 0
+  
+  # DEBUG
+  # distance_matrix = btv_msa_dist
+  # groups_vector = group_loc
+  
+  # iterate through samples to calculate Snn
+  # there is probably a more R way to do this but I am doing it this way
+  # because it makes sense to me
+  num_samples <- nrow(distance_matrix)
+  
+  # Loop through each individual
+  for (i in 1:num_samples) {
+    
+    # get the row of distances for this sample
+    row = distance_matrix[i,]
+    
+    # exclude self
+    row[i] <- NA  
+    
+    # for each row, find the minimum distance (ignore NA)
+    min_val <- min(row, na.rm = TRUE)
+    
+    # this is a vector of indices of nearest neighbors, with distance == minimum_distance
+    nn_i <- which(row == min_val)
+    
+    # this is the number of nearest neighbors with the same group as sample i
+    num_shared_group <- sum(age_vector[nn_i] == age_vector[i])
+    
+    # this is the number of nearest neighbors (regardless of group)
+    num_NN         <- length(nn_i)
+    
+    # the contribution to SNN for this sample = num_NN_with_shared_loc / num_NN / num_samples
+    fraction_shared_group <- (num_shared_group / num_NN) / num_samples
+    
+    if (is.na(fraction_shared_group)) {
+      message(paste0("Warning, sample ", names(row)[i], " produced an NA value"))
+    }
+    
+    Snn <- Snn + fraction_shared_group
+  }
+  
+  # return Snn
+  Snn 
+}
+
+Segment4_age_snn <- process_alignment_s4_age("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta", "Segment 4 - Animal Age, n=31, Snn=")
+
+Segment4_age_snn$plot
+
+# END Segment 4 Snn - testing age as lurking variable
+################################################################################
+
+
+################################################################################
+# Segment 4 Snn - testing sex as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -4698,12 +5356,12 @@ metadata_sex <- metadata_sex %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s4_sex <-  function (
-    fasta_msa = ".././Alignments/A3_s4_n29_CDS_only_aln.fasta",
-    prefix="A3_s4_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s4_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s4_n29_CDS_only_aln.fasta"
-  # prefix="A3_s4_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s4_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -4832,11 +5490,171 @@ calculate_snn_s4_sex <- function(distance_matrix, sex_vector) {
   Snn 
 }
 
-Segment4_sex_snn <- process_alignment_s4_sex(".././Alignments/A3_s4_n29_CDS_only_aln.fasta", "Segment 4 - Animal Sex, n=29, Snn=")
+Segment4_sex_snn <- process_alignment_s4_sex("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta", "Segment 4 - Animal Sex, n=31, Snn=")
 
 Segment4_sex_snn$plot
 
 # END Segment 4 Snn - testing sex as lurking variable
+################################################################################
+
+
+################################################################################
+# Segment 4 Snn - testing state as lurking variable
+
+# -------------------------------
+# Metadata (sample status)
+# -------------------------------
+
+# read in sample metadata including status
+# metadata <- read_excel("A3_Metadata.xlsx")
+metadata <- read_excel("../../../A3_Metadata_All.xlsx")
+
+# pull out just the columns we need and remove any NA variables
+metadata_state <- metadata %>% select(accession = accession, state, segment_4)
+metadata_state <- metadata_state %>% drop_na()
+
+num_permutations <- 5000
+
+process_alignment_s4_state <-  function (
+    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s4_n31_CDS_only_aln") {
+  
+  # DEBUG
+  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s4_n31_CDS_only_aln"
+  
+  # read in sequences
+  msa <- read.dna(fasta_msa, format="fasta")
+  
+  # relabel sequences with just the first part
+  accessions <- str_extract(labels(msa), ".*")
+  
+  # update labels: shorten to just accessions
+  rownames(msa) <- accessions
+  
+  # drop sequences for which we could not identify an accession
+  msa <- msa[!(is.na(accessions)), ]
+  accessions <- accessions[!(is.na(accessions))]
+  
+  # calculate distances
+  # TN93 distance model
+  dist_model = "TN93" 
+  msa_dist <- as.matrix(dist.dna(msa, model = dist_model))
+  
+  acc_loc <- tibble(accession = rownames(msa_dist))
+  # this will make groups in order of matrix accession
+  acc_loc <- left_join(acc_loc, metadata_state)  
+  # create a vector of the group matching the order of the distance matrix
+  states <- acc_loc %>% pull(state)
+  
+  # calculate Snn from distance matrix and sample metadata_species
+  this_snn <- calculate_snn_s4_state(msa_dist, states)
+  
+  perm_snns <- c()
+  
+  # do permutation testing
+  for (p in 1:num_permutations) {
+    # first, scramble groups using sampling without replacement
+    # using sampling without replacement will keep the # of samples from each
+    # location (group) the same between permutations, as specified in Hudson 2011
+    scrambled_groups  <- sample(states, replace=F)
+    perm_snn             <- calculate_snn_s4_state(msa_dist, scrambled_groups)
+    perm_snns            <- c(perm_snns, perm_snn)
+  }
+  
+  # calculate p-value from Snns from permutation tests
+  # DO NOT adjust p-value for multiple comparisons (n=10) with Bonferroni correction
+  num_tests <- 10
+  this_snn_p_val <- sum(perm_snns >= this_snn) / num_permutations
+  
+  if (this_snn_p_val == 0) {
+    this_snn_p_val_sci <- sprintf("%0.1e", 1/num_permutations)
+    this_snn_p_val <- paste0("<", this_snn_p_val_sci)
+  }
+  
+  # this_snn_p_val_bonf <- min(this_snn_p_val * num_tests, 1)
+  
+  snn_text <- paste0(prefix, 
+                     " ", 
+                     sprintf("%0.3f", this_snn), 
+                     " p = ", 
+                     this_snn_p_val)
+  print(snn_text)
+  
+  # plot a histogram of permutation pvalues and this 
+  perm_snns_tibble <- tibble(snn = perm_snns)
+  plot_snn <- ggplot(perm_snns_tibble) +
+    geom_histogram(aes(x=snn), bins=100, fill="grey20", color=NA) +
+    geom_vline(xintercept = this_snn, color="red", linewidth = 0.5) +
+    annotate("text", x=0.00, y=200, label=snn_text, hjust = 0, size=3) +
+    xlab("Snn") +
+    ylab("Count") +
+    theme_bw(base_size = 14)
+  
+  ggsave(paste0(prefix, "_Snn_permutation_testing.pdf"), 
+         units="in", width=7.5, height=5)
+  
+  
+  return(list(snn    = this_snn,
+              # pvalue = this_snn_p_val_bonf,
+              pvalue = this_snn_p_val,
+              plot   = plot_snn,
+              text   = snn_text))
+}
+
+calculate_snn_s4_state <- function(distance_matrix, state_vector) {
+  
+  Snn <- 0
+  
+  # DEBUG
+  # distance_matrix = btv_msa_dist
+  # groups_vector = group_loc
+  
+  # iterate through samples to calculate Snn
+  # there is probably a more R way to do this but I am doing it this way
+  # because it makes sense to me
+  num_samples <- nrow(distance_matrix)
+  
+  # Loop through each individual
+  for (i in 1:num_samples) {
+    
+    # get the row of distances for this sample
+    row = distance_matrix[i,]
+    
+    # exclude self
+    row[i] <- NA  
+    
+    # for each row, find the minimum distance (ignore NA)
+    min_val <- min(row, na.rm = TRUE)
+    
+    # this is a vector of indices of nearest neighbors, with distance == minimum_distance
+    nn_i <- which(row == min_val)
+    
+    # this is the number of nearest neighbors with the same group as sample i
+    num_shared_group <- sum(state_vector[nn_i] == state_vector[i])
+    
+    # this is the number of nearest neighbors (regardless of group)
+    num_NN         <- length(nn_i)
+    
+    # the contribution to SNN for this sample = num_NN_with_shared_loc / num_NN / num_samples
+    fraction_shared_group <- (num_shared_group / num_NN) / num_samples
+    
+    if (is.na(fraction_shared_group)) {
+      message(paste0("Warning, sample ", names(row)[i], " produced an NA value"))
+    }
+    
+    Snn <- Snn + fraction_shared_group
+  }
+  
+  # return Snn
+  Snn 
+}
+
+Segment4_state_snn <- process_alignment_s4_state("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta", "Segment 4 - State, n=31, Snn=")
+
+Segment4_state_snn$plot
+
+# END Segment 4 Snn - testing state as lurking variable
 ################################################################################
 
 
@@ -4874,7 +5692,7 @@ Segment4_sex_snn$plot
 
 
 ################################################################################
-# Segment 5 Snn - testing species as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 5 Snn - testing species as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -4891,12 +5709,12 @@ metadata_species <- metadata_species %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s5_species <-  function (
-    fasta_msa = ".././Alignments/A3_s5_n29_CDS_only_aln.fasta",
-    prefix="A3_s5_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s5_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s5_n29_CDS_only_aln.fasta"
-  # prefix="A3_s5_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s5_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -5025,7 +5843,7 @@ calculate_snn_s5_species <- function(distance_matrix, species_vector) {
   Snn 
 }
 
-Segment5_species_snn <- process_alignment_s5_species(".././Alignments/A3_s5_n29_CDS_only_aln.fasta", "Segment 5 - Species, n=29, Snn=")
+Segment5_species_snn <- process_alignment_s5_species("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta", "Segment 5 - Species, n=31, Snn=")
 
 Segment5_species_snn$plot
 
@@ -5034,7 +5852,7 @@ Segment5_species_snn$plot
 
 
 ################################################################################
-# Segment 5 Snn - testing serotype as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 5 Snn - testing serotype as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -5051,12 +5869,12 @@ metadata_serotype <- metadata_serotype %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s5_serotype <-  function (
-    fasta_msa = ".././Alignments/A3_s5_n29_CDS_only_aln.fasta",
-    prefix="A3_s5_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s5_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s5_n29_CDS_only_aln.fasta"
-  # prefix="A3_s5_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s5_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -5185,7 +6003,7 @@ calculate_snn_s5_serotype <- function(distance_matrix, serotype_vector) {
   Snn 
 }
 
-Segment5_serotype_snn <- process_alignment_s5_serotype(".././Alignments/A3_s5_n29_CDS_only_aln.fasta", "Segment 5 - Serotype, n=29, Snn=")
+Segment5_serotype_snn <- process_alignment_s5_serotype("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta", "Segment 5 - Serotype, n=31, Snn=")
 
 Segment5_serotype_snn$plot
 
@@ -5194,7 +6012,7 @@ Segment5_serotype_snn$plot
 
 
 ################################################################################
-# Segment 5 Snn - testing year as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 5 Snn - testing year as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -5211,12 +6029,12 @@ metadata_year <- metadata_year %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s5_year <-  function (
-    fasta_msa = ".././Alignments/A3_s5_n29_CDS_only_aln.fasta",
-    prefix="A3_s5_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s5_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s5_n29_CDS_only_aln.fasta"
-  # prefix="A3_s5_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s5_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -5345,7 +6163,7 @@ calculate_snn_s5_year <- function(distance_matrix, year_vector) {
   Snn 
 }
 
-Segment5_year_snn <- process_alignment_s5_year(".././Alignments/A3_s5_n29_CDS_only_aln.fasta", "Segment 5 - Year, n=29, Snn=")
+Segment5_year_snn <- process_alignment_s5_year("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta", "Segment 5 - Year, n=31, Snn=")
 
 Segment5_year_snn$plot
 
@@ -5354,7 +6172,7 @@ Segment5_year_snn$plot
 
 
 ################################################################################
-# Segment 5 Snn - testing age as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 5 Snn - testing age as lurking variable
 # There is not enough age representation across groups to reliably calculate Snn (TD 10.03.25)
 
 # -------------------------------
@@ -5365,17 +6183,18 @@ Segment5_year_snn$plot
 metadata <- read_excel("../../../A3_Metadata_All.xlsx")
 
 # pull out just the columns we need
-metadata_age <- metadata %>% select(accession = accession, age)
+metadata_age <- metadata %>% select(accession = accession, age, segment_5)
+metadata_age <- metadata_age %>% drop_na()
 
 num_permutations <- 5000
 
 process_alignment_s5_age <-  function (
-    fasta_msa = ".././Alignments/A3_s5_n29_CDS_only_aln.fasta",
-    prefix="A3_s5_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s5_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s5_n29_CDS_only_aln.fasta"
-  # prefix="A3_s5_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s5_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -5503,7 +6322,7 @@ calculate_snn_s5_age <- function(distance_matrix, age_vector) {
   Snn 
 }
 
-Segment5_age_snn <- process_alignment_s5_age(".././Alignments/A3_s5_n29_CDS_only_aln.fasta", "Segment 5 - Animal Age, n=29, Snn=")
+Segment5_age_snn <- process_alignment_s5_age("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta", "Segment 5 - Animal Age, n=31, Snn=")
 
 Segment5_age_snn$plot
 
@@ -5512,7 +6331,7 @@ Segment5_age_snn$plot
 
 
 ################################################################################
-# Segment 5 Snn - testing sex as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 5 Snn - testing sex as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -5529,12 +6348,12 @@ metadata_sex <- metadata_sex %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s5_sex <-  function (
-    fasta_msa = ".././Alignments/A3_s5_n29_CDS_only_aln.fasta",
-    prefix="A3_s5_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s5_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s5_n29_CDS_only_aln.fasta"
-  # prefix="A3_s5_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s5_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -5663,11 +6482,171 @@ calculate_snn_s5_sex <- function(distance_matrix, sex_vector) {
   Snn 
 }
 
-Segment5_sex_snn <- process_alignment_s5_sex(".././Alignments/A3_s5_n29_CDS_only_aln.fasta", "Segment 5 - Animal Sex, n=29, Snn=")
+Segment5_sex_snn <- process_alignment_s5_sex("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta", "Segment 5 - Animal Sex, n=31, Snn=")
 
 Segment5_sex_snn$plot
 
 # END Segment 5 Snn - testing sex as lurking variable
+################################################################################
+
+
+################################################################################
+# Segment 5 Snn - testing state as lurking variable
+
+# -------------------------------
+# Metadata (sample status)
+# -------------------------------
+
+# read in sample metadata including status
+# metadata <- read_excel("A3_Metadata.xlsx")
+metadata <- read_excel("../../../A3_Metadata_All.xlsx")
+
+# pull out just the columns we need and remove any NA variables
+metadata_state <- metadata %>% select(accession = accession, state, segment_5)
+metadata_state <- metadata_state %>% drop_na()
+
+num_permutations <- 5000
+
+process_alignment_s5_state <-  function (
+    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s5_n31_CDS_only_aln") {
+  
+  # DEBUG
+  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s5_n31_CDS_only_aln"
+  
+  # read in sequences
+  msa <- read.dna(fasta_msa, format="fasta")
+  
+  # relabel sequences with just the first part
+  accessions <- str_extract(labels(msa), ".*")
+  
+  # update labels: shorten to just accessions
+  rownames(msa) <- accessions
+  
+  # drop sequences for which we could not identify an accession
+  msa <- msa[!(is.na(accessions)), ]
+  accessions <- accessions[!(is.na(accessions))]
+  
+  # calculate distances
+  # TN93 distance model
+  dist_model = "TN93" 
+  msa_dist <- as.matrix(dist.dna(msa, model = dist_model))
+  
+  acc_loc <- tibble(accession = rownames(msa_dist))
+  # this will make groups in order of matrix accession
+  acc_loc <- left_join(acc_loc, metadata_state)  
+  # create a vector of the group matching the order of the distance matrix
+  states <- acc_loc %>% pull(state)
+  
+  # calculate Snn from distance matrix and sample metadata_species
+  this_snn <- calculate_snn_s5_state(msa_dist, states)
+  
+  perm_snns <- c()
+  
+  # do permutation testing
+  for (p in 1:num_permutations) {
+    # first, scramble groups using sampling without replacement
+    # using sampling without replacement will keep the # of samples from each
+    # location (group) the same between permutations, as specified in Hudson 2011
+    scrambled_groups  <- sample(states, replace=F)
+    perm_snn             <- calculate_snn_s5_state(msa_dist, scrambled_groups)
+    perm_snns            <- c(perm_snns, perm_snn)
+  }
+  
+  # calculate p-value from Snns from permutation tests
+  # DO NOT adjust p-value for multiple comparisons (n=10) with Bonferroni correction
+  num_tests <- 10
+  this_snn_p_val <- sum(perm_snns >= this_snn) / num_permutations
+  
+  if (this_snn_p_val == 0) {
+    this_snn_p_val_sci <- sprintf("%0.1e", 1/num_permutations)
+    this_snn_p_val <- paste0("<", this_snn_p_val_sci)
+  }
+  
+  # this_snn_p_val_bonf <- min(this_snn_p_val * num_tests, 1)
+  
+  snn_text <- paste0(prefix, 
+                     " ", 
+                     sprintf("%0.3f", this_snn), 
+                     " p = ", 
+                     this_snn_p_val)
+  print(snn_text)
+  
+  # plot a histogram of permutation pvalues and this 
+  perm_snns_tibble <- tibble(snn = perm_snns)
+  plot_snn <- ggplot(perm_snns_tibble) +
+    geom_histogram(aes(x=snn), bins=100, fill="grey20", color=NA) +
+    geom_vline(xintercept = this_snn, color="red", linewidth = 0.5) +
+    annotate("text", x=0.00, y=200, label=snn_text, hjust = 0, size=3) +
+    xlab("Snn") +
+    ylab("Count") +
+    theme_bw(base_size = 14)
+  
+  ggsave(paste0(prefix, "_Snn_permutation_testing.pdf"), 
+         units="in", width=7.5, height=5)
+  
+  
+  return(list(snn    = this_snn,
+              # pvalue = this_snn_p_val_bonf,
+              pvalue = this_snn_p_val,
+              plot   = plot_snn,
+              text   = snn_text))
+}
+
+calculate_snn_s5_state <- function(distance_matrix, state_vector) {
+  
+  Snn <- 0
+  
+  # DEBUG
+  # distance_matrix = btv_msa_dist
+  # groups_vector = group_loc
+  
+  # iterate through samples to calculate Snn
+  # there is probably a more R way to do this but I am doing it this way
+  # because it makes sense to me
+  num_samples <- nrow(distance_matrix)
+  
+  # Loop through each individual
+  for (i in 1:num_samples) {
+    
+    # get the row of distances for this sample
+    row = distance_matrix[i,]
+    
+    # exclude self
+    row[i] <- NA  
+    
+    # for each row, find the minimum distance (ignore NA)
+    min_val <- min(row, na.rm = TRUE)
+    
+    # this is a vector of indices of nearest neighbors, with distance == minimum_distance
+    nn_i <- which(row == min_val)
+    
+    # this is the number of nearest neighbors with the same group as sample i
+    num_shared_group <- sum(state_vector[nn_i] == state_vector[i])
+    
+    # this is the number of nearest neighbors (regardless of group)
+    num_NN         <- length(nn_i)
+    
+    # the contribution to SNN for this sample = num_NN_with_shared_loc / num_NN / num_samples
+    fraction_shared_group <- (num_shared_group / num_NN) / num_samples
+    
+    if (is.na(fraction_shared_group)) {
+      message(paste0("Warning, sample ", names(row)[i], " produced an NA value"))
+    }
+    
+    Snn <- Snn + fraction_shared_group
+  }
+  
+  # return Snn
+  Snn 
+}
+
+Segment5_state_snn <- process_alignment_s5_state("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta", "Segment 5 - State, n=31, Snn=")
+
+Segment5_state_snn$plot
+
+# END Segment 5 Snn - testing state as lurking variable
 ################################################################################
 
 
@@ -5708,7 +6687,7 @@ Segment5_sex_snn$plot
 
 
 ################################################################################
-# Segment 6 Snn - testing species as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 6 Snn - testing species as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -5725,12 +6704,12 @@ metadata_species <- metadata_species %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s6_species <-  function (
-    fasta_msa = ".././Alignments/A3_s6_n29_CDS_only_aln.fasta",
-    prefix="A3_s6_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s6_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s6_n29_CDS_only_aln.fasta"
-  # prefix="A3_s6_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s6_n33_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -5859,7 +6838,7 @@ calculate_snn_s6_species <- function(distance_matrix, species_vector) {
   Snn 
 }
 
-Segment6_species_snn <- process_alignment_s6_species(".././Alignments/A3_s6_n29_CDS_only_aln.fasta", "Segment 6 - Species, n=29, Snn=")
+Segment6_species_snn <- process_alignment_s6_species("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta", "Segment 6 - Species, n=33, Snn=")
 
 
 Segment6_species_snn$plot
@@ -5869,7 +6848,7 @@ Segment6_species_snn$plot
 
 
 ################################################################################
-# Segment 6 Snn - testing serotype as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 6 Snn - testing serotype as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -5886,12 +6865,12 @@ metadata_serotype <- metadata_serotype %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s6_serotype <-  function (
-    fasta_msa = ".././Alignments/A3_s6_n29_CDS_only_aln.fasta",
-    prefix="A3_s6_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s6_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s6_n29_CDS_only_aln.fasta"
-  # prefix="A3_s6_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s6_n33_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -6020,7 +6999,7 @@ calculate_snn_s6_serotype <- function(distance_matrix, serotype_vector) {
   Snn 
 }
 
-Segment6_serotype_snn <- process_alignment_s6_serotype(".././Alignments/A3_s6_n29_CDS_only_aln.fasta", "Segment 6 - Serotype, n=29, Snn=")
+Segment6_serotype_snn <- process_alignment_s6_serotype("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta", "Segment 6 - Serotype, n=33, Snn=")
 
 Segment6_serotype_snn$plot
 
@@ -6029,7 +7008,7 @@ Segment6_serotype_snn$plot
 
 
 ################################################################################
-# Segment 6 Snn - testing year as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 6 Snn - testing year as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -6046,12 +7025,12 @@ metadata_year <- metadata_year %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s6_year <-  function (
-    fasta_msa = ".././Alignments/A3_s6_n29_CDS_only_aln.fasta",
-    prefix="A3_s6_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s6_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s6_n29_CDS_only_aln.fasta"
-  # prefix="A3_s6_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s6_n33_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -6180,7 +7159,7 @@ calculate_snn_s6_year <- function(distance_matrix, year_vector) {
   Snn 
 }
 
-Segment6_year_snn <- process_alignment_s6_year(".././Alignments/A3_s6_n29_CDS_only_aln.fasta", "Segment 6 - Year, n=29, Snn=")
+Segment6_year_snn <- process_alignment_s6_year("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta", "Segment 6 - Year, n=33, Snn=")
 
 Segment6_year_snn$plot
 
@@ -6189,7 +7168,7 @@ Segment6_year_snn$plot
 
 
 ################################################################################
-# Segment 6 Snn - testing age as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 6 Snn - testing age as lurking variable
 # There is not enough age representation across groups to reliably calculate Snn (TD 10.03.25)
 
 # -------------------------------
@@ -6200,17 +7179,18 @@ Segment6_year_snn$plot
 metadata <- read_excel("../../../A3_Metadata_All.xlsx")
 
 # pull out just the columns we need
-metadata_age <- metadata %>% select(accession = accession, age)
+metadata_age <- metadata %>% select(accession = accession, age, segment_6)
+metadata_age <- metadata_age %>% drop_na()
 
 num_permutations <- 5000
 
 process_alignment_s6_age <-  function (
-    fasta_msa = ".././Alignments/A3_s6_n29_CDS_only_aln.fasta",
-    prefix="A3_s6_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s6_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s6_n29_CDS_only_aln.fasta"
-  # prefix="A3_s6_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s6_n33_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -6338,7 +7318,7 @@ calculate_snn_s6_age <- function(distance_matrix, age_vector) {
   Snn 
 }
 
-Segment6_age_snn <- process_alignment_s6_age(".././Alignments/A3_s6_n29_CDS_only_aln.fasta", "Segment 6 - Animal Age, n=29, Snn=")
+Segment6_age_snn <- process_alignment_s6_age("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta", "Segment 6 - Animal Age, n=33, Snn=")
 
 Segment6_age_snn$plot
 
@@ -6347,7 +7327,7 @@ Segment6_age_snn$plot
 
 
 ################################################################################
-# Segment 6 Snn - testing sex as lurking variable - Re-done on 02.05.26 w/all samples & no NAs
+# Segment 6 Snn - testing sex as lurking variable & no NAs
 
 # -------------------------------
 # Metadata (sample status)
@@ -6364,12 +7344,12 @@ metadata_sex <- metadata_sex %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s6_sex <-  function (
-    fasta_msa = ".././Alignments/A3_s6_n29_CDS_only_aln.fasta",
-    prefix="A3_s6_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s6_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s6_n29_CDS_only_aln.fasta"
-  # prefix="A3_s6_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s6_n33_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -6498,11 +7478,171 @@ calculate_snn_s6_sex <- function(distance_matrix, sex_vector) {
   Snn 
 }
 
-Segment6_sex_snn <- process_alignment_s6_sex(".././Alignments/A3_s6_n29_CDS_only_aln.fasta", "Segment 6 - Animal Sex, n=29, Snn=")
+Segment6_sex_snn <- process_alignment_s6_sex("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta", "Segment 6 - Animal Sex, n=33, Snn=")
 
 Segment6_sex_snn$plot
 
 # END Segment 6 Snn - testing sex as lurking variable
+################################################################################
+
+
+################################################################################
+# Segment 6 Snn - testing state as lurking variable & no NAs
+
+# -------------------------------
+# Metadata (sample status)
+# -------------------------------
+
+# read in sample metadata including status
+# metadata <- read_excel("A3_Metadata.xlsx")
+metadata <- read_excel("../../../A3_Metadata_All.xlsx")
+
+# pull out just the columns we need and remove any NA variables
+metadata_state <- metadata %>% select(accession = accession, state, segment_6)
+metadata_state <- metadata_state %>% drop_na()
+
+num_permutations <- 5000
+
+process_alignment_s6_state <-  function (
+    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s6_n33_CDS_only_aln") {
+  
+  # DEBUG
+  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s6_n33_CDS_only_aln"
+  
+  # read in sequences
+  msa <- read.dna(fasta_msa, format="fasta")
+  
+  # relabel sequences with just the first part
+  accessions <- str_extract(labels(msa), ".*")
+  
+  # update labels: shorten to just accessions
+  rownames(msa) <- accessions
+  
+  # drop sequences for which we could not identify an accession
+  msa <- msa[!(is.na(accessions)), ]
+  accessions <- accessions[!(is.na(accessions))]
+  
+  # calculate distances
+  # TN93 distance model
+  dist_model = "TN93" 
+  msa_dist <- as.matrix(dist.dna(msa, model = dist_model))
+  
+  acc_loc <- tibble(accession = rownames(msa_dist))
+  # this will make groups in order of matrix accession
+  acc_loc <- left_join(acc_loc, metadata_state)  
+  # create a vector of the group matching the order of the distance matrix
+  states <- acc_loc %>% pull(state)
+  
+  # calculate Snn from distance matrix and sample metadata_species
+  this_snn <- calculate_snn_s6_state(msa_dist, states)
+  
+  perm_snns <- c()
+  
+  # do permutation testing
+  for (p in 1:num_permutations) {
+    # first, scramble groups using sampling without replacement
+    # using sampling without replacement will keep the # of samples from each
+    # location (group) the same between permutations, as specified in Hudson 2011
+    scrambled_groups  <- sample(states, replace=F)
+    perm_snn             <- calculate_snn_s6_state(msa_dist, scrambled_groups)
+    perm_snns            <- c(perm_snns, perm_snn)
+  }
+  
+  # calculate p-value from Snns from permutation tests
+  # DO NOT adjust p-value for multiple comparisons (n=10) with Bonferroni correction
+  num_tests <- 10
+  this_snn_p_val <- sum(perm_snns >= this_snn) / num_permutations
+  
+  if (this_snn_p_val == 0) {
+    this_snn_p_val_sci <- sprintf("%0.1e", 1/num_permutations)
+    this_snn_p_val <- paste0("<", this_snn_p_val_sci)
+  }
+  
+  # this_snn_p_val_bonf <- min(this_snn_p_val * num_tests, 1)
+  
+  snn_text <- paste0(prefix, 
+                     " ", 
+                     sprintf("%0.3f", this_snn), 
+                     " p = ", 
+                     this_snn_p_val)
+  print(snn_text)
+  
+  # plot a histogram of permutation pvalues and this 
+  perm_snns_tibble <- tibble(snn = perm_snns)
+  plot_snn <- ggplot(perm_snns_tibble) +
+    geom_histogram(aes(x=snn), bins=100, fill="grey20", color=NA) +
+    geom_vline(xintercept = this_snn, color="red", linewidth = 0.5) +
+    annotate("text", x=0.00, y=200, label=snn_text, hjust = 0, size=3) +
+    xlab("Snn") +
+    ylab("Count") +
+    theme_bw(base_size = 14)
+  
+  ggsave(paste0(prefix, "_Snn_permutation_testing.pdf"), 
+         units="in", width=7.5, height=5)
+  
+  
+  return(list(snn    = this_snn,
+              # pvalue = this_snn_p_val_bonf,
+              pvalue = this_snn_p_val,
+              plot   = plot_snn,
+              text   = snn_text))
+}
+
+calculate_snn_s6_state <- function(distance_matrix, state_vector) {
+  
+  Snn <- 0
+  
+  # DEBUG
+  # distance_matrix = btv_msa_dist
+  # groups_vector = group_loc
+  
+  # iterate through samples to calculate Snn
+  # there is probably a more R way to do this but I am doing it this way
+  # because it makes sense to me
+  num_samples <- nrow(distance_matrix)
+  
+  # Loop through each individual
+  for (i in 1:num_samples) {
+    
+    # get the row of distances for this sample
+    row = distance_matrix[i,]
+    
+    # exclude self
+    row[i] <- NA  
+    
+    # for each row, find the minimum distance (ignore NA)
+    min_val <- min(row, na.rm = TRUE)
+    
+    # this is a vector of indices of nearest neighbors, with distance == minimum_distance
+    nn_i <- which(row == min_val)
+    
+    # this is the number of nearest neighbors with the same group as sample i
+    num_shared_group <- sum(state_vector[nn_i] == state_vector[i])
+    
+    # this is the number of nearest neighbors (regardless of group)
+    num_NN         <- length(nn_i)
+    
+    # the contribution to SNN for this sample = num_NN_with_shared_loc / num_NN / num_samples
+    fraction_shared_group <- (num_shared_group / num_NN) / num_samples
+    
+    if (is.na(fraction_shared_group)) {
+      message(paste0("Warning, sample ", names(row)[i], " produced an NA value"))
+    }
+    
+    Snn <- Snn + fraction_shared_group
+  }
+  
+  # return Snn
+  Snn 
+}
+
+Segment6_state_snn <- process_alignment_s6_state("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta", "Segment 6 - State, n=33, Snn=")
+
+Segment6_state_snn$plot
+
+# END Segment 6 Snn - testing state as lurking variable
 ################################################################################
 
 
@@ -6542,7 +7682,7 @@ Segment6_sex_snn$plot
 
 
 ################################################################################
-# Segment 7 Snn - testing species as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 7 Snn - testing species as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -6559,11 +7699,11 @@ metadata_species <- metadata_species %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s7_species <-  function (
-    fasta_msa = ".././Alignments/A3_s7_n29_CDS_Only_aln.fasta",
+    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta",
     prefix="A3_s7_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s7_n29_CDS_Only_aln.fasta"
+  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta"
   # prefix="A3_s7_n29_CDS_only_aln"
   
   # read in sequences
@@ -6693,7 +7833,7 @@ calculate_snn_s7_species <- function(distance_matrix, species_vector) {
   Snn 
 }
 
-Segment7_species_snn <- process_alignment_s7_species(".././Alignments/A3_s7_n29_CDS_Only_aln.fasta", "Segment 7 - Species, n=29, Snn=")
+Segment7_species_snn <- process_alignment_s7_species("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta", "Segment 7 - Species, n=29, Snn=")
 
 Segment7_species_snn$plot
 
@@ -6702,7 +7842,7 @@ Segment7_species_snn$plot
 
 
 ################################################################################
-# Segment 7 Snn - testing serotype as lurking variable - Re-done on 02.05.26
+# Segment 7 Snn - testing serotype as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -6719,11 +7859,11 @@ metadata_serotype <- metadata_serotype %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s7_serotype <-  function (
-    fasta_msa = ".././Alignments/A3_s7_n29_CDS_Only_aln.fasta",
+    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta",
     prefix="A3_s7_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s7_n29_CDS_Only_aln.fasta"
+  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta"
   # prefix="A3_s7_n29_CDS_only_aln"
   
   # read in sequences
@@ -6853,7 +7993,7 @@ calculate_snn_s7_serotype <- function(distance_matrix, serotype_vector) {
   Snn 
 }
 
-Segment7_serotype_snn <- process_alignment_s7_serotype(".././Alignments/A3_s7_n29_CDS_Only_aln.fasta", "Segment 7 - Serotype, n=29, Snn=")
+Segment7_serotype_snn <- process_alignment_s7_serotype("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta", "Segment 7 - Serotype, n=29, Snn=")
 
 Segment7_serotype_snn$plot
 
@@ -6862,7 +8002,7 @@ Segment7_serotype_snn$plot
 
 
 ################################################################################
-# Segment 7 Snn - testing year as lurking variable - Re-done on 02.05.26
+# Segment 7 Snn - testing year as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -6879,11 +8019,11 @@ metadata_year <- metadata_year %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s7_year <-  function (
-    fasta_msa = ".././Alignments/A3_s7_n29_CDS_Only_aln.fasta",
+    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta",
     prefix="A3_s7_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s7_n29_CDS_Only_aln.fasta"
+  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta"
   # prefix="A3_s7_n29_CDS_only_aln"
   
   # read in sequences
@@ -7013,7 +8153,7 @@ calculate_snn_s7_year <- function(distance_matrix, year_vector) {
   Snn 
 }
 
-Segment7_year_snn <- process_alignment_s7_year(".././Alignments/A3_s7_n29_CDS_Only_aln.fasta", "Segment 7 - Year, n=29, Snn=")
+Segment7_year_snn <- process_alignment_s7_year("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta", "Segment 7 - Year, n=29, Snn=")
 
 Segment7_year_snn$plot
 
@@ -7022,7 +8162,7 @@ Segment7_year_snn$plot
 
 
 ################################################################################
-# Segment 7 Snn - testing age as lurking variable - Re-done on 02.05.26
+# Segment 7 Snn - testing age as lurking variable
 # There is not enough age representation across groups to reliably calculate Snn (TD 10.03.25)
 
 # -------------------------------
@@ -7033,16 +8173,17 @@ Segment7_year_snn$plot
 metadata <- read_excel("../../../A3_Metadata_All.xlsx")
 
 # pull out just the columns we need
-metadata_age <- metadata %>% select(accession = accession, age)
+metadata_age <- metadata %>% select(accession = accession, age, segment_7)
+metadata_age <- metadata_age %>% drop_na()
 
 num_permutations <- 5000
 
 process_alignment_s7_age <-  function (
-    fasta_msa = ".././Alignments/A3_s7_n29_CDS_Only_aln.fasta",
+    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta",
     prefix="A3_s7_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s7_n29_CDS_Only_aln.fasta"
+  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta"
   # prefix="A3_s7_n29_CDS_only_aln"
   
   # read in sequences
@@ -7171,7 +8312,7 @@ calculate_snn_s7_age <- function(distance_matrix, age_vector) {
   Snn 
 }
 
-Segment7_age_snn <- process_alignment_s7_age(".././Alignments/A3_s7_n29_CDS_Only_aln.fasta", "Segment 7 - Animal Age, n=29, Snn=")
+Segment7_age_snn <- process_alignment_s7_age("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta", "Segment 7 - Animal Age, n=29, Snn=")
 
 Segment7_age_snn$plot
 
@@ -7180,7 +8321,7 @@ Segment7_age_snn$plot
 
 
 ################################################################################
-# Segment 7 Snn - testing sex as lurking variable - Re-done on 02.05.26
+# Segment 7 Snn - testing sex as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -7197,11 +8338,11 @@ metadata_sex <- metadata_sex %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s7_sex <-  function (
-    fasta_msa = ".././Alignments/A3_s7_n29_CDS_Only_aln.fasta",
+    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta",
     prefix="A3_s7_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s7_n29_CDS_Only_aln.fasta"
+  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta"
   # prefix="A3_s7_n29_CDS_only_aln"
   
   # read in sequences
@@ -7331,12 +8472,172 @@ calculate_snn_s7_sex <- function(distance_matrix, sex_vector) {
   Snn 
 }
 
-Segment7_sex_snn <- process_alignment_s7_sex(".././Alignments/A3_s7_n29_CDS_Only_aln.fasta", "Segment 7 - Animal Sex, n=29, Snn=")
+Segment7_sex_snn <- process_alignment_s7_sex("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta", "Segment 7 - Animal Sex, n=29, Snn=")
 
 Segment7_sex_snn$plot
 
 # END Segment 7 Snn - testing sex as lurking variable
 ################################################################################
+
+################################################################################
+# Segment 7 Snn - testing state as lurking variable
+
+# -------------------------------
+# Metadata (sample status)
+# -------------------------------
+
+# read in sample metadata including status
+# metadata <- read_excel("A3_Metadata.xlsx")
+metadata <- read_excel("../../../A3_Metadata_All.xlsx")
+
+# pull out just the columns we need and remove any NA variables
+metadata_state <- metadata %>% select(accession = accession, state, segment_7)
+metadata_state <- metadata_state %>% drop_na()
+
+num_permutations <- 5000
+
+process_alignment_s7_state <-  function (
+    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s7_n29_CDS_only_aln") {
+  
+  # DEBUG
+  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s7_n29_CDS_only_aln"
+  
+  # read in sequences
+  msa <- read.dna(fasta_msa, format="fasta")
+  
+  # relabel sequences with just the first part
+  accessions <- str_extract(labels(msa), ".*")
+  
+  # update labels: shorten to just accessions
+  rownames(msa) <- accessions
+  
+  # drop sequences for which we could not identify an accession
+  msa <- msa[!(is.na(accessions)), ]
+  accessions <- accessions[!(is.na(accessions))]
+  
+  # calculate distances
+  # TN93 distance model
+  dist_model = "TN93" 
+  msa_dist <- as.matrix(dist.dna(msa, model = dist_model))
+  
+  acc_loc <- tibble(accession = rownames(msa_dist))
+  # this will make groups in order of matrix accession
+  acc_loc <- left_join(acc_loc, metadata_state)  
+  # create a vector of the group matching the order of the distance matrix
+  states <- acc_loc %>% pull(state)
+  
+  # calculate Snn from distance matrix and sample metadata_species
+  this_snn <- calculate_snn_s7_state(msa_dist, states)
+  
+  perm_snns <- c()
+  
+  # do permutation testing
+  for (p in 1:num_permutations) {
+    # first, scramble groups using sampling without replacement
+    # using sampling without replacement will keep the # of samples from each
+    # location (group) the same between permutations, as specified in Hudson 2011
+    scrambled_groups  <- sample(states, replace=F)
+    perm_snn             <- calculate_snn_s7_state(msa_dist, scrambled_groups)
+    perm_snns            <- c(perm_snns, perm_snn)
+  }
+  
+  # calculate p-value from Snns from permutation tests
+  # DO NOT adjust p-value for multiple comparisons (n=10) with Bonferroni correction
+  num_tests <- 10
+  this_snn_p_val <- sum(perm_snns >= this_snn) / num_permutations
+  
+  if (this_snn_p_val == 0) {
+    this_snn_p_val_sci <- sprintf("%0.1e", 1/num_permutations)
+    this_snn_p_val <- paste0("<", this_snn_p_val_sci)
+  }
+  
+  # this_snn_p_val_bonf <- min(this_snn_p_val * num_tests, 1)
+  
+  snn_text <- paste0(prefix, 
+                     " ", 
+                     sprintf("%0.3f", this_snn), 
+                     " p = ", 
+                     this_snn_p_val)
+  print(snn_text)
+  
+  # plot a histogram of permutation pvalues and this 
+  perm_snns_tibble <- tibble(snn = perm_snns)
+  plot_snn <- ggplot(perm_snns_tibble) +
+    geom_histogram(aes(x=snn), bins=100, fill="grey20", color=NA) +
+    geom_vline(xintercept = this_snn, color="red", linewidth = 0.5) +
+    annotate("text", x=0.00, y=150, label=snn_text, hjust = 0, size=3) +
+    xlab("Snn") +
+    ylab("Count") +
+    theme_bw(base_size = 14)
+  
+  ggsave(paste0(prefix, "_Snn_permutation_testing.pdf"), 
+         units="in", width=7.5, height=5)
+  
+  
+  return(list(snn    = this_snn,
+              # pvalue = this_snn_p_val_bonf,
+              pvalue = this_snn_p_val,
+              plot   = plot_snn,
+              text   = snn_text))
+}
+
+calculate_snn_s7_state <- function(distance_matrix, state_vector) {
+  
+  Snn <- 0
+  
+  # DEBUG
+  # distance_matrix = btv_msa_dist
+  # groups_vector = group_loc
+  
+  # iterate through samples to calculate Snn
+  # there is probably a more R way to do this but I am doing it this way
+  # because it makes sense to me
+  num_samples <- nrow(distance_matrix)
+  
+  # Loop through each individual
+  for (i in 1:num_samples) {
+    
+    # get the row of distances for this sample
+    row = distance_matrix[i,]
+    
+    # exclude self
+    row[i] <- NA  
+    
+    # for each row, find the minimum distance (ignore NA)
+    min_val <- min(row, na.rm = TRUE)
+    
+    # this is a vector of indices of nearest neighbors, with distance == minimum_distance
+    nn_i <- which(row == min_val)
+    
+    # this is the number of nearest neighbors with the same group as sample i
+    num_shared_group <- sum(state_vector[nn_i] == state_vector[i])
+    
+    # this is the number of nearest neighbors (regardless of group)
+    num_NN         <- length(nn_i)
+    
+    # the contribution to SNN for this sample = num_NN_with_shared_loc / num_NN / num_samples
+    fraction_shared_group <- (num_shared_group / num_NN) / num_samples
+    
+    if (is.na(fraction_shared_group)) {
+      message(paste0("Warning, sample ", names(row)[i], " produced an NA value"))
+    }
+    
+    Snn <- Snn + fraction_shared_group
+  }
+  
+  # return Snn
+  Snn 
+}
+
+Segment7_state_snn <- process_alignment_s7_state("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta", "Segment 7 - State, n=29, Snn=")
+
+Segment7_state_snn$plot
+
+# END Segment 7 Snn - testing state as lurking variable
+################################################################################
+
 
 
 ################################################################################
@@ -7375,7 +8676,7 @@ Segment7_sex_snn$plot
 
 
 ################################################################################
-# Segment 8 Snn - testing species as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 8 Snn - testing species as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -7392,12 +8693,12 @@ metadata_species <- metadata_species %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s8_species <-  function (
-    fasta_msa = ".././Alignments/A3_s8_n29_CDS_only_aln.fasta",
-    prefix="A3_s8_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s8_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s8_n29_CDS_only_aln.fasta"
-  # prefix="A3_s8_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s8_n33_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -7526,7 +8827,7 @@ calculate_snn_s8_species <- function(distance_matrix, species_vector) {
   Snn 
 }
 
-Segment8_species_snn <- process_alignment_s8_species(".././Alignments/A3_s8_n29_CDS_only_aln.fasta", "Segment 8 - Species, n=29, Snn=")
+Segment8_species_snn <- process_alignment_s8_species("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta", "Segment 8 - Species, n=33, Snn=")
 
 Segment8_species_snn$plot
 
@@ -7535,7 +8836,7 @@ Segment8_species_snn$plot
 
 
 ################################################################################
-# Segment 8 Snn - testing serotype as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 8 Snn - testing serotype as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -7552,12 +8853,12 @@ metadata_serotype <- metadata_serotype %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s8_serotype <-  function (
-    fasta_msa = ".././Alignments/A3_s8_n29_CDS_only_aln.fasta",
-    prefix="A3_s8_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s8_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s8_n29_CDS_only_aln.fasta"
-  # prefix="A3_s8_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s8_n33_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -7686,7 +8987,7 @@ calculate_snn_s8_serotype <- function(distance_matrix, serotype_vector) {
   Snn 
 }
 
-Segment8_serotype_snn <- process_alignment_s8_serotype(".././Alignments/A3_s8_n29_CDS_only_aln.fasta", "Segment 8 - Serotype, n=29, Snn=")
+Segment8_serotype_snn <- process_alignment_s8_serotype("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta", "Segment 8 - Serotype, n=33, Snn=")
 
 Segment8_serotype_snn$plot
 
@@ -7695,7 +8996,7 @@ Segment8_serotype_snn$plot
 
 
 ################################################################################
-# Segment 8 Snn - testing year as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 8 Snn - testing year as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -7712,12 +9013,12 @@ metadata_year <- metadata_year %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s8_year <-  function (
-    fasta_msa = ".././Alignments/A3_s8_n29_CDS_only_aln.fasta",
-    prefix="A3_s8_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s8_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s8_n29_CDS_only_aln.fasta"
-  # prefix="A3_s8_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s8_n33_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -7846,7 +9147,7 @@ calculate_snn_s8_year <- function(distance_matrix, year_vector) {
   Snn 
 }
 
-Segment8_year_snn <- process_alignment_s8_year(".././Alignments/A3_s8_n29_CDS_only_aln.fasta", "Segment 8 - Year, n=29, Snn=")
+Segment8_year_snn <- process_alignment_s8_year("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta", "Segment 8 - Year, n=33, Snn=")
 
 Segment8_year_snn$plot
 
@@ -7855,7 +9156,7 @@ Segment8_year_snn$plot
 
 
 ################################################################################
-# Segment 8 Snn - testing age as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 8 Snn - testing age as lurking variable
 # There is not enough age representation across groups to reliably calculate Snn (TD 10.03.25)
 
 # -------------------------------
@@ -7866,17 +9167,18 @@ Segment8_year_snn$plot
 metadata <- read_excel("../../../A3_Metadata_All.xlsx")
 
 # pull out just the columns we need
-metadata_age <- metadata %>% select(accession = accession, age)
+metadata_age <- metadata %>% select(accession = accession, age, segment_8)
+metadata_age <- metadata_age %>% drop_na()
 
 num_permutations <- 5000
 
 process_alignment_s8_age <-  function (
-    fasta_msa = ".././Alignments/A3_s8_n29_CDS_only_aln.fasta",
-    prefix="A3_s8_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s8_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s8_n29_CDS_only_aln.fasta"
-  # prefix="A3_s8_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s8_n33_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -8004,7 +9306,7 @@ calculate_snn_s8_age <- function(distance_matrix, age_vector) {
   Snn 
 }
 
-Segment8_age_snn <- process_alignment_s8_age(".././Alignments/A3_s8_n29_CDS_only_aln.fasta", "Segment 8 - Animal Age, n=29, Snn=")
+Segment8_age_snn <- process_alignment_s8_age("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta", "Segment 8 - Animal Age, n=33, Snn=")
 
 Segment8_age_snn$plot
 
@@ -8013,7 +9315,7 @@ Segment8_age_snn$plot
 
 
 ################################################################################
-# Segment 8 Snn - testing sex as lurking variable - Re-done on 02.05.26 w/all samples & no NAs
+# Segment 8 Snn - testing sex as lurking variable & no NAs
 
 # -------------------------------
 # Metadata (sample status)
@@ -8030,12 +9332,12 @@ metadata_sex <- metadata_sex %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s8_sex <-  function (
-    fasta_msa = ".././Alignments/A3_s8_n29_CDS_only_aln.fasta",
-    prefix="A3_s8_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s8_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s8_n29_CDS_only_aln.fasta"
-  # prefix="A3_s8_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s8_n33_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -8164,11 +9466,170 @@ calculate_snn_s8_sex <- function(distance_matrix, sex_vector) {
   Snn 
 }
 
-Segment8_sex_snn <- process_alignment_s8_sex(".././Alignments/A3_s8_n29_CDS_only_aln.fasta", "Segment 8 - Animal Sex, n=29, Snn=")
+Segment8_sex_snn <- process_alignment_s8_sex("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta", "Segment 8 - Animal Sex, n=33, Snn=")
 
 Segment8_sex_snn$plot
 
 # END Segment 8 Snn - testing sex as lurking variable
+################################################################################
+
+################################################################################
+# Segment 8 Snn - testing state as lurking variable & no NAs
+
+# -------------------------------
+# Metadata (sample status)
+# -------------------------------
+
+# read in sample metadata including status
+# metadata <- read_excel("A3_Metadata.xlsx")
+metadata <- read_excel("../../../A3_Metadata_All.xlsx")
+
+# pull out just the columns we need and remove any NA variables
+metadata_state <- metadata %>% select(accession = accession, state, segment_8)
+metadata_state <- metadata_state %>% drop_na()
+
+num_permutations <- 5000
+
+process_alignment_s8_state <-  function (
+    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s8_n33_CDS_only_aln") {
+  
+  # DEBUG
+  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s8_n33_CDS_only_aln"
+  
+  # read in sequences
+  msa <- read.dna(fasta_msa, format="fasta")
+  
+  # relabel sequences with just the first part
+  accessions <- str_extract(labels(msa), ".*")
+  
+  # update labels: shorten to just accessions
+  rownames(msa) <- accessions
+  
+  # drop sequences for which we could not identify an accession
+  msa <- msa[!(is.na(accessions)), ]
+  accessions <- accessions[!(is.na(accessions))]
+  
+  # calculate distances
+  # TN93 distance model
+  dist_model = "TN93" 
+  msa_dist <- as.matrix(dist.dna(msa, model = dist_model))
+  
+  acc_loc <- tibble(accession = rownames(msa_dist))
+  # this will make groups in order of matrix accession
+  acc_loc <- left_join(acc_loc, metadata_state)  
+  # create a vector of the group matching the order of the distance matrix
+  states <- acc_loc %>% pull(state)
+  
+  # calculate Snn from distance matrix and sample metadata_species
+  this_snn <- calculate_snn_s8_state(msa_dist, states)
+  
+  perm_snns <- c()
+  
+  # do permutation testing
+  for (p in 1:num_permutations) {
+    # first, scramble groups using sampling without replacement
+    # using sampling without replacement will keep the # of samples from each
+    # location (group) the same between permutations, as specified in Hudson 2011
+    scrambled_groups  <- sample(states, replace=F)
+    perm_snn             <- calculate_snn_s8_state(msa_dist, scrambled_groups)
+    perm_snns            <- c(perm_snns, perm_snn)
+  }
+  
+  # calculate p-value from Snns from permutation tests
+  # DO NOT adjust p-value for multiple comparisons (n=10) with Bonferroni correction
+  num_tests <- 10
+  this_snn_p_val <- sum(perm_snns >= this_snn) / num_permutations
+  
+  if (this_snn_p_val == 0) {
+    this_snn_p_val_sci <- sprintf("%0.1e", 1/num_permutations)
+    this_snn_p_val <- paste0("<", this_snn_p_val_sci)
+  }
+  
+  # this_snn_p_val_bonf <- min(this_snn_p_val * num_tests, 1)
+  
+  snn_text <- paste0(prefix, 
+                     " ", 
+                     sprintf("%0.3f", this_snn), 
+                     " p = ", 
+                     this_snn_p_val)
+  print(snn_text)
+  
+  # plot a histogram of permutation pvalues and this 
+  perm_snns_tibble <- tibble(snn = perm_snns)
+  plot_snn <- ggplot(perm_snns_tibble) +
+    geom_histogram(aes(x=snn), bins=100, fill="grey20", color=NA) +
+    geom_vline(xintercept = this_snn, color="red", linewidth = 0.5) +
+    annotate("text", x=0.00, y=150, label=snn_text, hjust = 0, size=3) +
+    xlab("Snn") +
+    ylab("Count") +
+    theme_bw(base_size = 14)
+  
+  ggsave(paste0(prefix, "_Snn_permutation_testing.pdf"), 
+         units="in", width=7.5, height=5)
+  
+  
+  return(list(snn    = this_snn,
+              # pvalue = this_snn_p_val_bonf,
+              pvalue = this_snn_p_val,
+              plot   = plot_snn,
+              text   = snn_text))
+}
+
+calculate_snn_s8_state <- function(distance_matrix, state_vector) {
+  
+  Snn <- 0
+  
+  # DEBUG
+  # distance_matrix = btv_msa_dist
+  # groups_vector = group_loc
+  
+  # iterate through samples to calculate Snn
+  # there is probably a more R way to do this but I am doing it this way
+  # because it makes sense to me
+  num_samples <- nrow(distance_matrix)
+  
+  # Loop through each individual
+  for (i in 1:num_samples) {
+    
+    # get the row of distances for this sample
+    row = distance_matrix[i,]
+    
+    # exclude self
+    row[i] <- NA  
+    
+    # for each row, find the minimum distance (ignore NA)
+    min_val <- min(row, na.rm = TRUE)
+    
+    # this is a vector of indices of nearest neighbors, with distance == minimum_distance
+    nn_i <- which(row == min_val)
+    
+    # this is the number of nearest neighbors with the same group as sample i
+    num_shared_group <- sum(state_vector[nn_i] == state_vector[i])
+    
+    # this is the number of nearest neighbors (regardless of group)
+    num_NN         <- length(nn_i)
+    
+    # the contribution to SNN for this sample = num_NN_with_shared_loc / num_NN / num_samples
+    fraction_shared_group <- (num_shared_group / num_NN) / num_samples
+    
+    if (is.na(fraction_shared_group)) {
+      message(paste0("Warning, sample ", names(row)[i], " produced an NA value"))
+    }
+    
+    Snn <- Snn + fraction_shared_group
+  }
+  
+  # return Snn
+  Snn 
+}
+
+Segment8_state_snn <- process_alignment_s8_state("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta", "Segment 8 - State, n=33, Snn=")
+
+Segment8_state_snn$plot
+
+# END Segment 8 Snn - testing state as lurking variable
 ################################################################################
 
 
@@ -8208,7 +9669,7 @@ Segment8_sex_snn$plot
 
 
 ################################################################################
-# Segment 9 Snn - testing species as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 9 Snn - testing species as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -8225,12 +9686,12 @@ metadata_species <- metadata_species %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s9_species <-  function (
-    fasta_msa = ".././Alignments/A3_s9_n29_CDS_only_aln.fasta",
-    prefix="A3_s9_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s9_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s9_n29_CDS_only_aln.fasta"
-  # prefix="A3_s9_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s9_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -8359,7 +9820,7 @@ calculate_snn_s9_species <- function(distance_matrix, species_vector) {
   Snn 
 }
 
-Segment9_species_snn <- process_alignment_s9_species(".././Alignments/A3_s9_n29_CDS_only_aln.fasta", "Segment 9 - Species, n=29, Snn=")
+Segment9_species_snn <- process_alignment_s9_species("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta", "Segment 9 - Species, n=31, Snn=")
 
 Segment9_species_snn$plot
 
@@ -8368,7 +9829,7 @@ Segment9_species_snn$plot
 
 
 ################################################################################
-# Segment 9 Snn - testing serotype as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 9 Snn - testing serotype as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -8385,12 +9846,12 @@ metadata_serotype <- metadata_serotype %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s9_serotype <-  function (
-    fasta_msa = ".././Alignments/A3_s9_n29_CDS_only_aln.fasta",
-    prefix="A3_s9_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s9_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s9_n29_CDS_only_aln.fasta"
-  # prefix="A3_s9_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s9_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -8519,7 +9980,7 @@ calculate_snn_s9_serotype <- function(distance_matrix, serotype_vector) {
   Snn 
 }
 
-Segment9_serotype_snn <- process_alignment_s9_serotype(".././Alignments/A3_s9_n29_CDS_only_aln.fasta", "Segment 9 - Serotype, n=29, Snn=")
+Segment9_serotype_snn <- process_alignment_s9_serotype("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta", "Segment 9 - Serotype, n=31, Snn=")
 
 Segment9_serotype_snn$plot
 
@@ -8528,7 +9989,7 @@ Segment9_serotype_snn$plot
 
 
 ################################################################################
-# Segment 9 Snn - testing year as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 9 Snn - testing year as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -8545,12 +10006,12 @@ metadata_year <- metadata_year %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s9_year <-  function (
-    fasta_msa = ".././Alignments/A3_s9_n29_CDS_only_aln.fasta",
-    prefix="A3_s9_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s9_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s9_n29_CDS_only_aln.fasta"
-  # prefix="A3_s9_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s9_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -8679,7 +10140,7 @@ calculate_snn_s9_year <- function(distance_matrix, year_vector) {
   Snn 
 }
 
-Segment9_year_snn <- process_alignment_s9_year(".././Alignments/A3_s9_n29_CDS_only_aln.fasta", "Segment 9 - Year, n=29, Snn=")
+Segment9_year_snn <- process_alignment_s9_year("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta", "Segment 9 - Year, n=31, Snn=")
 
 Segment9_year_snn$plot
 
@@ -8688,7 +10149,7 @@ Segment9_year_snn$plot
 
 
 ################################################################################
-# Segment 9 Snn - testing age as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 9 Snn - testing age as lurking variable
 # There is not enough age representation across groups to reliably calculate Snn (TD 10.03.25)
 
 # -------------------------------
@@ -8699,17 +10160,18 @@ Segment9_year_snn$plot
 metadata <- read_excel("../../../A3_Metadata_All.xlsx")
 
 # pull out just the columns we need
-metadata_age <- metadata %>% select(accession = accession, age)
+metadata_age <- metadata %>% select(accession = accession, age, segment_9)
+metadata_age <- metadata_age %>% drop_na()
 
 num_permutations <- 5000
 
 process_alignment_s9_age <-  function (
-    fasta_msa = ".././Alignments/A3_s9_n29_CDS_only_aln.fasta",
-    prefix="A3_s9_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s9_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s9_n29_CDS_only_aln.fasta"
-  # prefix="A3_s9_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s9_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -8837,7 +10299,7 @@ calculate_snn_s9_age <- function(distance_matrix, age_vector) {
   Snn 
 }
 
-Segment9_age_snn <- process_alignment_s9_age(".././Alignments/A3_s9_n29_CDS_only_aln.fasta", "Segment 9 - Animal Age, n=29, Snn=")
+Segment9_age_snn <- process_alignment_s9_age("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta", "Segment 9 - Animal Age, n=31, Snn=")
 
 Segment9_age_snn$plot
 
@@ -8846,7 +10308,7 @@ Segment9_age_snn$plot
 
 
 ################################################################################
-# Segment 9 Snn - testing sex as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 9 Snn - testing sex as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -8863,12 +10325,12 @@ metadata_sex <- metadata_sex %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s9_sex <-  function (
-    fasta_msa = ".././Alignments/A3_s9_n29_CDS_only_aln.fasta",
-    prefix="A3_s9_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s9_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s9_n29_CDS_only_aln.fasta"
-  # prefix="A3_s9_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s9_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -8997,11 +10459,170 @@ calculate_snn_s9_sex <- function(distance_matrix, sex_vector) {
   Snn 
 }
 
-Segment9_sex_snn <- process_alignment_s9_sex(".././Alignments/A3_s9_n29_CDS_only_aln.fasta", "Segment 9 - Animal Sex, n=29, Snn=")
+Segment9_sex_snn <- process_alignment_s9_sex("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta", "Segment 9 - Animal Sex, n=31, Snn=")
 
 Segment9_sex_snn$plot
 
 # END Segment 9 Snn - testing sex as lurking variable
+################################################################################
+
+################################################################################
+# Segment 9 Snn - testing state as lurking variable
+
+# -------------------------------
+# Metadata (sample status)
+# -------------------------------
+
+# read in sample metadata including status
+# metadata <- read_excel("A3_Metadata.xlsx")
+metadata <- read_excel("../../../A3_Metadata_All.xlsx")
+
+# pull out just the columns we need and remove any NA variables
+metadata_state <- metadata %>% select(accession = accession, state, segment_9)
+metadata_state <- metadata_state %>% drop_na()
+
+num_permutations <- 5000
+
+process_alignment_s9_state <-  function (
+    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s9_n31_CDS_only_aln") {
+  
+  # DEBUG
+  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s9_n31_CDS_only_aln"
+  
+  # read in sequences
+  msa <- read.dna(fasta_msa, format="fasta")
+  
+  # relabel sequences with just the first part
+  accessions <- str_extract(labels(msa), ".*")
+  
+  # update labels: shorten to just accessions
+  rownames(msa) <- accessions
+  
+  # drop sequences for which we could not identify an accession
+  msa <- msa[!(is.na(accessions)), ]
+  accessions <- accessions[!(is.na(accessions))]
+  
+  # calculate distances
+  # TN93 distance model
+  dist_model = "TN93" 
+  msa_dist <- as.matrix(dist.dna(msa, model = dist_model))
+  
+  acc_loc <- tibble(accession = rownames(msa_dist))
+  # this will make groups in order of matrix accession
+  acc_loc <- left_join(acc_loc, metadata_state)  
+  # create a vector of the group matching the order of the distance matrix
+  states <- acc_loc %>% pull(state)
+  
+  # calculate Snn from distance matrix and sample metadata_species
+  this_snn <- calculate_snn_s9_state(msa_dist, states)
+  
+  perm_snns <- c()
+  
+  # do permutation testing
+  for (p in 1:num_permutations) {
+    # first, scramble groups using sampling without replacement
+    # using sampling without replacement will keep the # of samples from each
+    # location (group) the same between permutations, as specified in Hudson 2011
+    scrambled_groups  <- sample(states, replace=F)
+    perm_snn             <- calculate_snn_s9_state(msa_dist, scrambled_groups)
+    perm_snns            <- c(perm_snns, perm_snn)
+  }
+  
+  # calculate p-value from Snns from permutation tests
+  # DO NOT adjust p-value for multiple comparisons (n=10) with Bonferroni correction
+  num_tests <- 10
+  this_snn_p_val <- sum(perm_snns >= this_snn) / num_permutations
+  
+  if (this_snn_p_val == 0) {
+    this_snn_p_val_sci <- sprintf("%0.1e", 1/num_permutations)
+    this_snn_p_val <- paste0("<", this_snn_p_val_sci)
+  }
+  
+  # this_snn_p_val_bonf <- min(this_snn_p_val * num_tests, 1)
+  
+  snn_text <- paste0(prefix, 
+                     " ", 
+                     sprintf("%0.3f", this_snn), 
+                     " p = ", 
+                     this_snn_p_val)
+  print(snn_text)
+  
+  # plot a histogram of permutation pvalues and this 
+  perm_snns_tibble <- tibble(snn = perm_snns)
+  plot_snn <- ggplot(perm_snns_tibble) +
+    geom_histogram(aes(x=snn), bins=100, fill="grey20", color=NA) +
+    geom_vline(xintercept = this_snn, color="red", linewidth = 0.5) +
+    annotate("text", x=0.00, y=150, label=snn_text, hjust = 0, size=3) +
+    xlab("Snn") +
+    ylab("Count") +
+    theme_bw(base_size = 14)
+  
+  ggsave(paste0(prefix, "_Snn_permutation_testing.pdf"), 
+         units="in", width=7.5, height=5)
+  
+  
+  return(list(snn    = this_snn,
+              # pvalue = this_snn_p_val_bonf,
+              pvalue = this_snn_p_val,
+              plot   = plot_snn,
+              text   = snn_text))
+}
+
+calculate_snn_s9_state <- function(distance_matrix, state_vector) {
+  
+  Snn <- 0
+  
+  # DEBUG
+  # distance_matrix = btv_msa_dist
+  # groups_vector = group_loc
+  
+  # iterate through samples to calculate Snn
+  # there is probably a more R way to do this but I am doing it this way
+  # because it makes sense to me
+  num_samples <- nrow(distance_matrix)
+  
+  # Loop through each individual
+  for (i in 1:num_samples) {
+    
+    # get the row of distances for this sample
+    row = distance_matrix[i,]
+    
+    # exclude self
+    row[i] <- NA  
+    
+    # for each row, find the minimum distance (ignore NA)
+    min_val <- min(row, na.rm = TRUE)
+    
+    # this is a vector of indices of nearest neighbors, with distance == minimum_distance
+    nn_i <- which(row == min_val)
+    
+    # this is the number of nearest neighbors with the same group as sample i
+    num_shared_group <- sum(state_vector[nn_i] == state_vector[i])
+    
+    # this is the number of nearest neighbors (regardless of group)
+    num_NN         <- length(nn_i)
+    
+    # the contribution to SNN for this sample = num_NN_with_shared_loc / num_NN / num_samples
+    fraction_shared_group <- (num_shared_group / num_NN) / num_samples
+    
+    if (is.na(fraction_shared_group)) {
+      message(paste0("Warning, sample ", names(row)[i], " produced an NA value"))
+    }
+    
+    Snn <- Snn + fraction_shared_group
+  }
+  
+  # return Snn
+  Snn 
+}
+
+Segment9_state_snn <- process_alignment_s9_state("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta", "Segment 9 - State, n=31, Snn=")
+
+Segment9_state_snn$plot
+
+# END Segment 9 Snn - testing state as lurking variable
 ################################################################################
 
 
@@ -9041,7 +10662,7 @@ Segment9_sex_snn$plot
 
 
 ################################################################################
-# Segment 10 Snn - testing species as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 10 Snn - testing species as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -9058,12 +10679,12 @@ metadata_species <- metadata_species %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s10_species <-  function (
-    fasta_msa = ".././Alignments/A3_s10_n29_CDS_only_aln.fasta",
-    prefix="A3_s10_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s10_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s10_n29_CDS_only_aln.fasta"
-  # prefix="A3_s10_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s10_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -9192,7 +10813,7 @@ calculate_snn_s10_species <- function(distance_matrix, species_vector) {
   Snn 
 }
 
-Segment10_species_snn <- process_alignment_s10_species(".././Alignments/A3_s10_n29_CDS_only_aln.fasta", "Segment 10 - Species, n=29, Snn=")
+Segment10_species_snn <- process_alignment_s10_species("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta", "Segment 10 - Species, n=31, Snn=")
 
 Segment10_species_snn$plot
 
@@ -9201,7 +10822,7 @@ Segment10_species_snn$plot
 
 
 ################################################################################
-# Segment 10 Snn - testing serotype as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 10 Snn - testing serotype as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -9218,12 +10839,12 @@ metadata_serotype <- metadata_serotype %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s10_serotype <-  function (
-    fasta_msa = ".././Alignments/A3_s10_n29_CDS_only_aln.fasta",
-    prefix="A3_s10_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s10_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s10_n29_CDS_only_aln.fasta"
-  # prefix="A3_s10_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s10_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -9352,7 +10973,7 @@ calculate_snn_s10_serotype <- function(distance_matrix, serotype_vector) {
   Snn 
 }
 
-Segment10_serotype_snn <- process_alignment_s10_serotype(".././Alignments/A3_s10_n29_CDS_only_aln.fasta", "Segment 10 - Serotype, n=29, Snn=")
+Segment10_serotype_snn <- process_alignment_s10_serotype("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta", "Segment 10 - Serotype, n=31, Snn=")
 
 Segment10_serotype_snn$plot
 
@@ -9361,7 +10982,7 @@ Segment10_serotype_snn$plot
 
 
 ################################################################################
-# Segment 10 Snn - testing year as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 10 Snn - testing year as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -9378,12 +10999,12 @@ metadata_year <- metadata_year %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s10_year <-  function (
-    fasta_msa = ".././Alignments/A3_s10_n29_CDS_only_aln.fasta",
-    prefix="A3_s10_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s10_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s10_n29_CDS_only_aln.fasta"
-  # prefix="A3_s10_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s10_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -9512,7 +11133,7 @@ calculate_snn_s10_year <- function(distance_matrix, year_vector) {
   Snn 
 }
 
-Segment10_year_snn <- process_alignment_s10_year(".././Alignments/A3_s10_n29_CDS_only_aln.fasta", "Segment 10 - Year, n=29, Snn=")
+Segment10_year_snn <- process_alignment_s10_year("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta", "Segment 10 - Year, n=31, Snn=")
 
 Segment10_year_snn$plot
 
@@ -9521,7 +11142,7 @@ Segment10_year_snn$plot
 
 
 ################################################################################
-# Segment 10 Snn - testing age as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 10 Snn - testing age as lurking variable
 # There is not enough age representation across groups to reliably calculate Snn (TD 10.03.25)
 
 # -------------------------------
@@ -9532,17 +11153,18 @@ Segment10_year_snn$plot
 metadata <- read_excel("../../../A3_Metadata_All.xlsx")
 
 # pull out just the columns we need
-metadata_age <- metadata %>% select(accession = accession, age)
+metadata_age <- metadata %>% select(accession = accession, age, segment_10)
+metadata_age <- metadata_age %>% drop_na()
 
 num_permutations <- 5000
 
 process_alignment_s10_age <-  function (
-    fasta_msa = ".././Alignments/A3_s10_n29_CDS_only_aln.fasta",
-    prefix="A3_s10_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s10_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s10_n29_CDS_only_aln.fasta"
-  # prefix="A3_s10_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s10_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -9670,7 +11292,7 @@ calculate_snn_s10_age <- function(distance_matrix, age_vector) {
   Snn 
 }
 
-Segment10_age_snn <- process_alignment_s10_age(".././Alignments/A3_s10_n29_CDS_only_aln.fasta", "Segment 10 - Animal Age, n=29, Snn=")
+Segment10_age_snn <- process_alignment_s10_age("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta", "Segment 10 - Animal Age, n=31, Snn=")
 
 Segment10_age_snn$plot
 
@@ -9679,7 +11301,7 @@ Segment10_age_snn$plot
 
 
 ################################################################################
-# Segment 10 Snn - testing sex as lurking variable - Re-done on 02.05.26 w/all samples
+# Segment 10 Snn - testing sex as lurking variable
 
 # -------------------------------
 # Metadata (sample status)
@@ -9697,12 +11319,12 @@ metadata_sex <- metadata_sex %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s10_sex <-  function (
-    fasta_msa = ".././Alignments/A3_s10_n29_CDS_only_aln.fasta",
-    prefix="A3_s10_n29_CDS_only_aln") {
+    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s10_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = ".././Alignments/A3_s10_n29_CDS_only_aln.fasta"
-  # prefix="A3_s10_n29_CDS_only_aln"
+  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s10_n31_CDS_only_aln"
   
   # read in sequences
   msa <- read.dna(fasta_msa, format="fasta")
@@ -9831,11 +11453,172 @@ calculate_snn_s10_sex <- function(distance_matrix, sex_vector) {
   Snn 
 }
 
-Segment10_sex_snn <- process_alignment_s10_sex(".././Alignments/A3_s10_n29_CDS_only_aln.fasta", "Segment 10 - Animal Sex, n=29, Snn=")
+Segment10_sex_snn <- process_alignment_s10_sex("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta", "Segment 10 - Animal Sex, n=31, Snn=")
 
 Segment10_sex_snn$plot
 
 # END Segment 10 Snn - testing sex as lurking variable
+################################################################################
+
+
+################################################################################
+# Segment 10 Snn - testing state as lurking variable
+
+# -------------------------------
+# Metadata (sample status)
+# -------------------------------
+
+# read in sample metadata including status
+# metadata <- read_excel("A3_Metadata.xlsx")
+metadata <- read_excel("../../../A3_Metadata_All.xlsx")
+
+# pull out just the columns we need and remove any NA variables
+metadata_state <- metadata %>% select(accession = accession, state, segment_10)
+metadata_state <- metadata_state %>% drop_na()
+
+
+num_permutations <- 5000
+
+process_alignment_s10_state <-  function (
+    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta",
+    prefix="A3_s10_n31_CDS_only_aln") {
+  
+  # DEBUG
+  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta"
+  # prefix="A3_s10_n31_CDS_only_aln"
+  
+  # read in sequences
+  msa <- read.dna(fasta_msa, format="fasta")
+  
+  # relabel sequences with just the first part
+  accessions <- str_extract(labels(msa), ".*")
+  
+  # update labels: shorten to just accessions
+  rownames(msa) <- accessions
+  
+  # drop sequences for which we could not identify an accession
+  msa <- msa[!(is.na(accessions)), ]
+  accessions <- accessions[!(is.na(accessions))]
+  
+  # calculate distances
+  # TN93 distance model
+  dist_model = "TN93" 
+  msa_dist <- as.matrix(dist.dna(msa, model = dist_model))
+  
+  acc_loc <- tibble(accession = rownames(msa_dist))
+  # this will make groups in order of matrix accession
+  acc_loc <- left_join(acc_loc, metadata_state)  
+  # create a vector of the group matching the order of the distance matrix
+  states <- acc_loc %>% pull(state)
+  
+  # calculate Snn from distance matrix and sample metadata_species
+  this_snn <- calculate_snn_s10_state(msa_dist, states)
+  
+  perm_snns <- c()
+  
+  # do permutation testing
+  for (p in 1:num_permutations) {
+    # first, scramble groups using sampling without replacement
+    # using sampling without replacement will keep the # of samples from each
+    # location (group) the same between permutations, as specified in Hudson 2011
+    scrambled_groups  <- sample(states, replace=F)
+    perm_snn             <- calculate_snn_s10_state(msa_dist, scrambled_groups)
+    perm_snns            <- c(perm_snns, perm_snn)
+  }
+  
+  # calculate p-value from Snns from permutation tests
+  # DO NOT adjust p-value for multiple comparisons (n=10) with Bonferroni correction
+  num_tests <- 10
+  this_snn_p_val <- sum(perm_snns >= this_snn) / num_permutations
+  
+  if (this_snn_p_val == 0) {
+    this_snn_p_val_sci <- sprintf("%0.1e", 1/num_permutations)
+    this_snn_p_val <- paste0("<", this_snn_p_val_sci)
+  }
+  
+  # this_snn_p_val_bonf <- min(this_snn_p_val * num_tests, 1)
+  
+  snn_text <- paste0(prefix, 
+                     " ", 
+                     sprintf("%0.3f", this_snn), 
+                     " p = ", 
+                     this_snn_p_val)
+  print(snn_text)
+  
+  # plot a histogram of permutation pvalues and this 
+  perm_snns_tibble <- tibble(snn = perm_snns)
+  plot_snn <- ggplot(perm_snns_tibble) +
+    geom_histogram(aes(x=snn), bins=100, fill="grey20", color=NA) +
+    geom_vline(xintercept = this_snn, color="red", linewidth = 0.5) +
+    annotate("text", x=0.00, y=150, label=snn_text, hjust = 0, size=3) +
+    xlab("Snn") +
+    ylab("Count") +
+    theme_bw(base_size = 14)
+  
+  ggsave(paste0(prefix, "_Snn_permutation_testing.pdf"), 
+         units="in", width=7.5, height=5)
+  
+  
+  return(list(snn    = this_snn,
+              # pvalue = this_snn_p_val_bonf,
+              pvalue = this_snn_p_val,
+              plot   = plot_snn,
+              text   = snn_text))
+}
+
+calculate_snn_s10_state <- function(distance_matrix, state_vector) {
+  
+  Snn <- 0
+  
+  # DEBUG
+  # distance_matrix = btv_msa_dist
+  # groups_vector = group_loc
+  
+  # iterate through samples to calculate Snn
+  # there is probably a more R way to do this but I am doing it this way
+  # because it makes sense to me
+  num_samples <- nrow(distance_matrix)
+  
+  # Loop through each individual
+  for (i in 1:num_samples) {
+    
+    # get the row of distances for this sample
+    row = distance_matrix[i,]
+    
+    # exclude self
+    row[i] <- NA  
+    
+    # for each row, find the minimum distance (ignore NA)
+    min_val <- min(row, na.rm = TRUE)
+    
+    # this is a vector of indices of nearest neighbors, with distance == minimum_distance
+    nn_i <- which(row == min_val)
+    
+    # this is the number of nearest neighbors with the same group as sample i
+    num_shared_group <- sum(state_vector[nn_i] == state_vector[i])
+    
+    # this is the number of nearest neighbors (regardless of group)
+    num_NN         <- length(nn_i)
+    
+    # the contribution to SNN for this sample = num_NN_with_shared_loc / num_NN / num_samples
+    fraction_shared_group <- (num_shared_group / num_NN) / num_samples
+    
+    if (is.na(fraction_shared_group)) {
+      message(paste0("Warning, sample ", names(row)[i], " produced an NA value"))
+    }
+    
+    Snn <- Snn + fraction_shared_group
+  }
+  
+  # return Snn
+  Snn 
+}
+
+Segment10_state_snn <- process_alignment_s10_state("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta", "Segment 10 - State, n=31, Snn=")
+
+Segment10_state_snn$plot
+
+# END Segment 10 Snn - testing state as lurking variable
 ################################################################################
 
 
@@ -9876,21 +11659,21 @@ Segment10_sex_snn$plot
 
 # Adjust Clinical and Subclinical p-values
 ##########################
-status_pval_supp_table <- 
-  tibble( segment = c("BTV Segment 1", "BTV Segment 2", "BTV Segment 3", 
-                      "BTV Segment 4", "BTV Segment 5", "BTV Segment 6", 
-                      "BTV Segment 7", "BTV Segment 8", "BTV Segment 9", "BTV Segment 10"),
-          snn = c(Segment1_snn$snn, Segment2_snn$snn, Segment3_snn$snn, 
-                   Segment4_snn$snn, Segment5_snn$snn, Segment6_snn$snn, 
-                   Segment7_snn$snn, Segment8_snn$snn, Segment9_snn$snn, Segment10_snn$snn)
-          pval = c(Segment1_snn$pval, Segment2_snn$pval, Segment3_snn$pval, 
-                   Segment4_snn$pval, Segment5_snn$pval, Segment6_snn$pval, 
-                   Segment7_snn$pval, Segment8_snn$pval, Segment9_snn$pval, Segment10_snn$pval)
-          ) %>%
-          mutate(pval_bonf = p.adjust(pval, method = "bonferroni", n = length(pval)))
-
+# status_pval_supp_table <- 
+#   tibble( segment = c("BTV Segment 1", "BTV Segment 2", "BTV Segment 3", 
+#                       "BTV Segment 4", "BTV Segment 5", "BTV Segment 6", 
+#                       "BTV Segment 7", "BTV Segment 8", "BTV Segment 9", "BTV Segment 10"),
+#           snn = c(Segment1_snn$snn, Segment2_snn$snn, Segment3_snn$snn, 
+#                   Segment4_snn$snn, Segment5_snn$snn, Segment6_snn$snn, 
+#                   Segment7_snn$snn, Segment8_snn$snn, Segment9_snn$snn, Segment10_snn$snn)
+#           pval = c(Segment1_snn$pval, Segment2_snn$pval, Segment3_snn$pval, 
+#                    Segment4_snn$pval, Segment5_snn$pval, Segment6_snn$pval, 
+#                    Segment7_snn$pval, Segment8_snn$pval, Segment9_snn$pval, Segment10_snn$pval)
+#   ) %>%
+#   mutate(pval_bonf = p.adjust(pval, method = "bonferroni", n = length(pval)))
+# 
 # write.table(status_pval_supp_table, 
-#             file="all_segments_WGOnly_n29_status_supplemental_table_snn_020526.txt",
+#             file="all_segments_all_samples_status_supplemental_table_snn_031026.txt",
 #             quote=F, sep="\t", row.names=F)
 
 ##########################
@@ -9903,6 +11686,9 @@ species_pval_supp_table <-
   tibble( segment = c("BTV Segment 1", "BTV Segment 2", "BTV Segment 3", 
                       "BTV Segment 4", "BTV Segment 5", "BTV Segment 6", 
                       "BTV Segment 7", "BTV Segment 8", "BTV Segment 9", "BTV Segment 10"),
+          n = c("s1 = n29", "s2 = n29", "s3 = n30",
+                "s4 = n31", "s5 = n31", "s6 = n33", 
+                "s7 = n29", "s8 = n33", "s9 = n31", "s10 = n31"),
           snn = c(Segment1_species_snn$snn, Segment2_species_snn$snn, Segment3_species_snn$snn, 
                   Segment4_species_snn$snn, Segment5_species_snn$snn, Segment6_species_snn$snn, 
                   Segment7_species_snn$snn, Segment8_species_snn$snn, Segment9_species_snn$snn, 
@@ -9915,7 +11701,7 @@ species_pval_supp_table <-
   mutate(pval_bonf = p.adjust(pval, method = "bonferroni", n = length(pval)))
 
 write.table(species_pval_supp_table, 
-            file="all_segments_WGOnly_n29_species_supplemental_table_snn_020526.txt",
+            file="all_segments_all_samples_SPECIES_supplemental_table_snn_061826.txt",
             quote=F, sep="\t", row.names=F)
 
 ##########################
@@ -9928,6 +11714,9 @@ serotype_pval_supp_table <-
   tibble( segment = c("BTV Segment 1", "BTV Segment 2", "BTV Segment 3", 
                       "BTV Segment 4", "BTV Segment 5", "BTV Segment 6", 
                       "BTV Segment 7", "BTV Segment 8", "BTV Segment 9", "BTV Segment 10"),
+          n = c("s1 = n29", "s2 = n29", "s3 = n30",
+                "s4 = n31", "s5 = n31", "s6 = n33", 
+                "s7 = n29", "s8 = n33", "s9 = n31", "s10 = n31"),
           snn = c(Segment1_serotype_snn$snn, Segment2_serotype_snn$snn, Segment3_serotype_snn$snn, 
                   Segment4_serotype_snn$snn, Segment5_serotype_snn$snn, Segment6_serotype_snn$snn, 
                   Segment7_serotype_snn$snn, Segment8_serotype_snn$snn, Segment9_serotype_snn$snn, 
@@ -9940,7 +11729,7 @@ serotype_pval_supp_table <-
   mutate(pval_bonf = p.adjust(pval, method = "bonferroni", n = length(pval)))
 
 write.table(serotype_pval_supp_table, 
-            file="all_segments_WGOnly_n29_serotype_supplemental_table_snn_020526.txt",
+            file="all_segments_all_samples_SEROTYPE_supplemental_table_snn_061826.txt",
             quote=F, sep="\t", row.names=F)
 
 ##########################
@@ -9953,6 +11742,9 @@ year_pval_supp_table <-
   tibble( segment = c("BTV Segment 1", "BTV Segment 2", "BTV Segment 3", 
                       "BTV Segment 4", "BTV Segment 5", "BTV Segment 6", 
                       "BTV Segment 7", "BTV Segment 8", "BTV Segment 9", "BTV Segment 10"),
+          n = c("s1 = n29", "s2 = n29", "s3 = n30",
+                "s4 = n31", "s5 = n31", "s6 = n33", 
+                "s7 = n29", "s8 = n33", "s9 = n31", "s10 = n31"),
           snn = c(Segment1_year_snn$snn, Segment2_year_snn$snn, Segment3_year_snn$snn, 
                   Segment4_year_snn$snn, Segment5_year_snn$snn, Segment6_year_snn$snn, 
                   Segment7_year_snn$snn, Segment8_year_snn$snn, Segment9_year_snn$snn, 
@@ -9965,8 +11757,9 @@ year_pval_supp_table <-
   mutate(pval_bonf = p.adjust(pval, method = "bonferroni", n = length(pval)))
 
 write.table(year_pval_supp_table, 
-            file="all_segments_WGOnly_n29_year_supplemental_table_snn_020526.txt",
+            file="all_segments_all_samples_YEAR_supplemental_table_snn_061826.txt",
             quote=F, sep="\t", row.names=F)
+
 ##########################
 
 
@@ -9977,6 +11770,9 @@ sex_pval_supp_table <-
   tibble( segment = c("BTV Segment 1", "BTV Segment 2", "BTV Segment 3", 
                       "BTV Segment 4", "BTV Segment 5", "BTV Segment 6", 
                       "BTV Segment 7", "BTV Segment 8", "BTV Segment 9", "BTV Segment 10"),
+          n = c("s1 = n29", "s2 = n29", "s3 = n30",
+                "s4 = n31", "s5 = n31", "s6 = n33", 
+                "s7 = n29", "s8 = n33", "s9 = n31", "s10 = n31"),
           snn = c(Segment1_sex_snn$snn, Segment2_sex_snn$snn, Segment3_sex_snn$snn, 
                   Segment4_sex_snn$snn, Segment5_sex_snn$snn, Segment6_sex_snn$snn, 
                   Segment7_sex_snn$snn, Segment8_sex_snn$snn, Segment9_sex_snn$snn, 
@@ -9989,9 +11785,10 @@ sex_pval_supp_table <-
   mutate(pval_bonf = p.adjust(pval, method = "bonferroni", n = length(pval)))
 
 write.table(sex_pval_supp_table, 
-            file="all_segments_WGOnly_n29_sex_supplemental_table_snn_020526.txt",
+            file="all_segments_all_samples_SEX_supplemental_table_snn_061826.txt",
             quote=F, sep="\t", row.names=F)
 ##########################
+
 
 # Adjust Age p-values
 ##########################
@@ -9999,6 +11796,9 @@ age_pval_supp_table <-
   tibble( segment = c("BTV Segment 1", "BTV Segment 2", "BTV Segment 3", 
                       "BTV Segment 4", "BTV Segment 5", "BTV Segment 6", 
                       "BTV Segment 7", "BTV Segment 8", "BTV Segment 9", "BTV Segment 10"),
+          n = c("s1 = n29", "s2 = n29", "s3 = n30",
+                "s4 = n31", "s5 = n31", "s6 = n33", 
+                "s7 = n29", "s8 = n33", "s9 = n31", "s10 = n31"),
           snn = c(Segment1_age_snn$snn, Segment2_age_snn$snn, Segment3_age_snn$snn, 
                   Segment4_age_snn$snn, Segment5_age_snn$snn, Segment6_age_snn$snn, 
                   Segment7_age_snn$snn, Segment8_age_snn$snn, Segment9_age_snn$snn, 
@@ -10011,9 +11811,37 @@ age_pval_supp_table <-
   mutate(pval_bonf = p.adjust(pval, method = "bonferroni", n = length(pval)))
 
 write.table(age_pval_supp_table, 
-            file="all_segments_WGOnly_n29_age_supplemental_table_snn_020526.txt",
+            file="all_segments_all_samples_AGE_supplemental_table_snn_061826.txt",
+            quote=F, sep="\t", row.names=F)
+##########################
+
+
+# Adjust State p-values
+##########################
+state_pval_supp_table <- 
+  tibble( segment = c("BTV Segment 1", "BTV Segment 2", "BTV Segment 3", 
+                      "BTV Segment 4", "BTV Segment 5", "BTV Segment 6", 
+                      "BTV Segment 7", "BTV Segment 8", "BTV Segment 9", "BTV Segment 10"),
+          n = c("s1 = n29", "s2 = n29", "s3 = n30",
+                "s4 = n31", "s5 = n31", "s6 = n33", 
+                "s7 = n29", "s8 = n33", "s9 = n31", "s10 = n31"),
+          snn = c(Segment1_state_snn$snn, Segment2_state_snn$snn, Segment3_state_snn$snn, 
+                  Segment4_state_snn$snn, Segment5_state_snn$snn, Segment6_state_snn$snn, 
+                  Segment7_state_snn$snn, Segment8_state_snn$snn, Segment9_state_snn$snn, 
+                  Segment10_state_snn$snn),
+          pval = c(Segment1_state_snn$pval, Segment2_state_snn$pval, Segment3_state_snn$pval, 
+                   Segment4_state_snn$pval, Segment5_state_snn$pval, Segment6_state_snn$pval, 
+                   Segment7_state_snn$pval, Segment8_state_snn$pval, Segment9_state_snn$pval, 
+                   Segment10_state_snn$pval)
+  ) %>%
+  mutate(pval_bonf = p.adjust(pval, method = "bonferroni", n = length(pval)))
+
+write.table(state_pval_supp_table, 
+            file="all_segments_all_samples_STATE_supplemental_table_snn_061826.txt",
             quote=F, sep="\t", row.names=F)
 ##########################
 
 ################################################################################
+
+
 
