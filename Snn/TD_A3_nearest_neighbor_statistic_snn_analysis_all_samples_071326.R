@@ -12,8 +12,9 @@
 # Original script written by: Mark Stenglein 8/28/2025
 # Script adapted by: Tillie Dunham 04/01/2026 for Aim 3 Analysis
 
-# A3 - Re-Run all segments TD 06.18.26
+# A3 - Re-Run all segments TD 07.13.26
 # Run with updated alignments and sequences submitted to GenBank
+# Used GenBank submission from 07.12.26
 
 # All samples 
 # s1 - n29
@@ -61,11 +62,11 @@ metadata <- metadata %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s1 <-  function (
-    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", 
+    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta", 
     prefix="A3_s1_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s1_n29_CDS_only_aln"
   
   # read in sequences
@@ -195,7 +196,7 @@ calculate_snn_s1 <- function(distance_matrix, groups_vector) {
   Snn 
 }
 
-Segment1_snn <- process_alignment_s1("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", "Segment 1, n=29, Snn=")
+Segment1_snn <- process_alignment_s1("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta", "Segment 1, n=29, Snn=")
 
 Segment1_snn$plot
 
@@ -222,11 +223,11 @@ metadata <- metadata %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s2 <-  function (
-    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", 
+    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta", 
     prefix="A3_s2_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s2_n29_CDS_only_aln"
   
   # read in sequences
@@ -356,7 +357,7 @@ calculate_snn_s2 <- function(distance_matrix, groups_vector) {
   Snn 
 }
 
-Segment2_snn <- process_alignment_s2("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", "Segment 2, n=29, Snn=")
+Segment2_snn <- process_alignment_s2("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta", "Segment 2, n=29, Snn=")
 
 Segment2_snn$plot
 
@@ -383,11 +384,11 @@ metadata <- metadata %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s3 <-  function (
-    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s3_n30_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s3_n30_CDS_only_aln"
   
   # read in sequences
@@ -517,7 +518,7 @@ calculate_snn_s3 <- function(distance_matrix, groups_vector) {
   Snn 
 }
 
-Segment3_snn <- process_alignment_s3("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta", "Segment 3, n=30, Snn=")
+Segment3_snn <- process_alignment_s3("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta", "Segment 3, n=30, Snn=")
 
 Segment3_snn$plot
 
@@ -544,11 +545,11 @@ metadata <- metadata %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s4 <-  function (
-    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s4_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s4_n31_CDS_only_aln"
   
   # read in sequences
@@ -678,7 +679,7 @@ calculate_snn_s4 <- function(distance_matrix, groups_vector) {
   Snn 
 }
 
-Segment4_snn <- process_alignment_s4("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta", "Segment 4, n=31, Snn=")
+Segment4_snn <- process_alignment_s4("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta", "Segment 4, n=31, Snn=")
 
 Segment4_snn$plot
 
@@ -705,11 +706,11 @@ metadata <- metadata %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s5 <-  function (
-    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s5_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s5_n31_CDS_only_aln"
   
   # read in sequences
@@ -839,7 +840,7 @@ calculate_snn_s5 <- function(distance_matrix, groups_vector) {
   Snn 
 }
 
-Segment5_snn <- process_alignment_s5("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta", "Segment 5, n=31, Snn=")
+Segment5_snn <- process_alignment_s5("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta", "Segment 5, n=31, Snn=")
 
 Segment5_snn$plot
 
@@ -866,11 +867,11 @@ metadata <- metadata %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s6 <-  function (
-    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s6_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s6_n33_CDS_only_aln"
   
   # read in sequences
@@ -1000,7 +1001,7 @@ calculate_snn_s6 <- function(distance_matrix, groups_vector) {
   Snn 
 }
 
-Segment6_snn <- process_alignment_s6("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta", "Segment 6, n=33, Snn=")
+Segment6_snn <- process_alignment_s6("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta", "Segment 6, n=33, Snn=")
 
 Segment6_snn$plot
 
@@ -1026,11 +1027,11 @@ metadata <- metadata %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s7 <-  function (
-    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s7_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s7_n29_CDS_only_aln"
   
   # read in sequences
@@ -1160,7 +1161,7 @@ calculate_snn_s7 <- function(distance_matrix, groups_vector) {
   Snn 
 }
 
-Segment7_snn <- process_alignment_s7("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta", "Segment 7, n=29, Snn=")
+Segment7_snn <- process_alignment_s7("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta", "Segment 7, n=29, Snn=")
 
 Segment7_snn$plot
 
@@ -1186,11 +1187,11 @@ metadata <- metadata %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s8 <-  function (
-    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s8_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s8_n33_CDS_only_aln"
   
   # read in sequences
@@ -1320,7 +1321,7 @@ calculate_snn_s8 <- function(distance_matrix, groups_vector) {
   Snn 
 }
 
-Segment8_snn <- process_alignment_s8("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta", "Segment 8, n=33, Snn=")
+Segment8_snn <- process_alignment_s8("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta", "Segment 8, n=33, Snn=")
 
 Segment8_snn$plot
 
@@ -1347,11 +1348,11 @@ metadata <- metadata %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s9 <-  function (
-    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s9_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s9_n31_CDS_only_aln"
   
   # read in sequences
@@ -1481,7 +1482,7 @@ calculate_snn_s9 <- function(distance_matrix, groups_vector) {
   Snn 
 }
 
-Segment9_snn <- process_alignment_s9("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta", "Segment 9, n=31, Snn=")
+Segment9_snn <- process_alignment_s9("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta", "Segment 9, n=31, Snn=")
 
 Segment9_snn$plot
 
@@ -1508,11 +1509,11 @@ metadata <- metadata %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s10 <-  function (
-    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s10_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s10_n31_CDS_only_aln"
   
   # read in sequences
@@ -1642,7 +1643,7 @@ calculate_snn_s10 <- function(distance_matrix, groups_vector) {
   Snn 
 }
 
-Segment10_snn <- process_alignment_s10("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta", "Segment 10, n=31, Snn=")
+Segment10_snn <- process_alignment_s10("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta", "Segment 10, n=31, Snn=")
 
 Segment10_snn$plot
 
@@ -1673,7 +1674,7 @@ snn_supp_table <-
   mutate(pval_bonf = p.adjust(pval, method = "bonferroni", n = length(pval)))
 
 write.table(snn_supp_table, 
-            file="rerun_NO_Clinical_20_GenBank_Seqs_STATUS_supplemental_table_snn_061826.txt",
+            file="rerun_NO_Clinical_20_GenBank_Seqs_STATUS_supplemental_table_snn_071326.txt",
             quote=F, sep="\t", row.names=F)
 ################################################################################ END
 
@@ -1743,11 +1744,11 @@ metadata_species <- metadata_species %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s1_species <-  function (
-    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", 
+    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta", 
     prefix="A3_s1_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s1_n29_CDS_only_aln"
   
   # read in sequences
@@ -1877,7 +1878,7 @@ calculate_snn_s1_species <- function(distance_matrix, species_vector) {
   Snn 
 }
 
-Segment1_species_snn <- process_alignment_s1_species("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", "Segment 1 - Species, n=29, Snn=")
+Segment1_species_snn <- process_alignment_s1_species("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta", "Segment 1 - Species, n=29, Snn=")
 
 Segment1_species_snn$plot
 
@@ -1903,11 +1904,11 @@ metadata_serotype <- metadata_serotype %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s1_serotype <-  function (
-    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", 
+    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta", 
     prefix="A3_s1_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s1_n29_CDS_only_aln"
   
   # read in sequences
@@ -2037,7 +2038,7 @@ calculate_snn_s1_serotype <- function(distance_matrix, serotype_vector) {
   Snn 
 }
 
-Segment1_serotype_snn <- process_alignment_s1_serotype("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", "Segment 1 - Serotype, n=29, Snn=")
+Segment1_serotype_snn <- process_alignment_s1_serotype("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta", "Segment 1 - Serotype, n=29, Snn=")
 
 Segment1_serotype_snn$plot
 
@@ -2063,11 +2064,11 @@ metadata_year <- metadata_year %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s1_year <-  function (
-    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", 
+    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta", 
     prefix="A3_s1_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s1_n29_CDS_only_aln"
   
   # read in sequences
@@ -2197,7 +2198,7 @@ calculate_snn_s1_year <- function(distance_matrix, year_vector) {
   Snn 
 }
 
-Segment1_year_snn <- process_alignment_s1_year("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", "Segment 1 - Year, n=29, Snn=")
+Segment1_year_snn <- process_alignment_s1_year("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta", "Segment 1 - Year, n=29, Snn=")
 
 Segment1_year_snn$plot
 
@@ -2223,11 +2224,11 @@ metadata_age <- metadata_age %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s1_age <-  function (
-    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", 
+    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta", 
     prefix="A3_s1_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s1_n29_CDS_only_aln"
   
   # read in sequences
@@ -2356,7 +2357,7 @@ calculate_snn_s1_age <- function(distance_matrix, age_vector) {
   Snn 
 }
 
-Segment1_age_snn <- process_alignment_s1_age("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", "Segment 1 - Animal Age, n=29, Snn=")
+Segment1_age_snn <- process_alignment_s1_age("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta", "Segment 1 - Animal Age, n=29, Snn=")
 
 Segment1_age_snn$plot
 
@@ -2382,11 +2383,11 @@ metadata_sex <- metadata_sex %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s1_sex <-  function (
-    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", 
+    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta", 
     prefix="A3_s1_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s1_n29_CDS_only_aln"
   
   # read in sequences
@@ -2516,7 +2517,7 @@ calculate_snn_s1_sex <- function(distance_matrix, sex_vector) {
   Snn 
 }
 
-Segment1_sex_snn <- process_alignment_s1_sex("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", "Segment 1 - Animal Sex, n=29, Snn=")
+Segment1_sex_snn <- process_alignment_s1_sex("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta", "Segment 1 - Animal Sex, n=29, Snn=")
 
 Segment1_sex_snn$plot
 
@@ -2542,11 +2543,11 @@ metadata_state <- metadata_state %>% drop_na(segment_1)
 num_permutations <- 5000
 
 process_alignment_s1_state <-  function (
-    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", 
+    fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta", 
     prefix="A3_s1_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s1_n29_CDS_only_aln"
   
   # read in sequences
@@ -2676,7 +2677,7 @@ calculate_snn_s1_state <- function(distance_matrix, state_vector) {
   Snn 
 }
 
-Segment1_state_snn <- process_alignment_s1_state("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_2.fasta", "Segment 1 - State, n=29, Snn=")
+Segment1_state_snn <- process_alignment_s1_state("./Alignments/A3_s1_n29_CDS_Only_aln_repeat_3.fasta", "Segment 1 - State, n=29, Snn=")
 
 Segment1_state_snn$plot
 
@@ -2729,11 +2730,11 @@ metadata_species <- metadata_species %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s2_species <-  function (
-    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", 
+    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta", 
     prefix="A3_s2_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s2_n29_CDS_only_aln"
   
   # read in sequences
@@ -2863,7 +2864,7 @@ calculate_snn_s2_species <- function(distance_matrix, species_vector) {
   Snn 
 }
 
-Segment2_species_snn <- process_alignment_s2_species("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", "Segment 2 - Species, n=29, Snn=")
+Segment2_species_snn <- process_alignment_s2_species("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta", "Segment 2 - Species, n=29, Snn=")
 
 Segment2_species_snn$plot
 
@@ -2889,11 +2890,11 @@ metadata_serotype <- metadata_serotype %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s2_serotype <-  function (
-    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", 
+    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta", 
     prefix="A3_s2_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s2_n29_CDS_only_aln"
   
   # read in sequences
@@ -3023,7 +3024,7 @@ calculate_snn_s2_serotype <- function(distance_matrix, serotype_vector) {
   Snn 
 }
 
-Segment2_serotype_snn <- process_alignment_s2_serotype("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", "Segment 2 - Serotype, n=29, Snn=")
+Segment2_serotype_snn <- process_alignment_s2_serotype("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta", "Segment 2 - Serotype, n=29, Snn=")
 
 Segment2_serotype_snn$plot
 
@@ -3049,11 +3050,11 @@ metadata_year <- metadata_year %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s2_year <-  function (
-    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", 
+    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta", 
     prefix="A3_s2_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s2_n29_CDS_only_aln"
   
   # read in sequences
@@ -3183,7 +3184,7 @@ calculate_snn_s2_year <- function(distance_matrix, year_vector) {
   Snn 
 }
 
-Segment2_year_snn <- process_alignment_s2_year("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", "Segment 2 - Year, n=29, Snn=")
+Segment2_year_snn <- process_alignment_s2_year("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta", "Segment 2 - Year, n=29, Snn=")
 
 Segment2_year_snn$plot
 
@@ -3209,11 +3210,11 @@ metadata_age <- metadata_age %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s2_age <-  function (
-    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", 
+    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta", 
     prefix="A3_s2_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s2_n29_CDS_only_aln"
   
   # read in sequences
@@ -3342,7 +3343,7 @@ calculate_snn_s2_age <- function(distance_matrix, age_vector) {
   Snn 
 }
 
-Segment2_age_snn <- process_alignment_s2_age("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", "Segment 2 - Animal Age, n=29, Snn=")
+Segment2_age_snn <- process_alignment_s2_age("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta", "Segment 2 - Animal Age, n=29, Snn=")
 
 Segment2_age_snn$plot
 
@@ -3368,11 +3369,11 @@ metadata_sex <- metadata_sex %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s2_sex <-  function (
-    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", 
+    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta", 
     prefix="A3_s2_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s2_n29_CDS_only_aln"
   
   # read in sequences
@@ -3502,7 +3503,7 @@ calculate_snn_s2_sex <- function(distance_matrix, sex_vector) {
   Snn 
 }
 
-Segment2_sex_snn <- process_alignment_s2_sex("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", "Segment 2 - Animal Sex, n=29, Snn=")
+Segment2_sex_snn <- process_alignment_s2_sex("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta", "Segment 2 - Animal Sex, n=29, Snn=")
 
 Segment2_sex_snn$plot
 
@@ -3528,11 +3529,11 @@ metadata_state <- metadata_state %>% drop_na(segment_2)
 num_permutations <- 5000
 
 process_alignment_s2_state <-  function (
-    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", 
+    fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta", 
     prefix="A3_s2_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s2_n29_CDS_only_aln"
   
   # read in sequences
@@ -3662,7 +3663,7 @@ calculate_snn_s2_state <- function(distance_matrix, state_vector) {
   Snn 
 }
 
-Segment2_state_snn <- process_alignment_s2_state("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_2.fasta", "Segment 2 - State, n=29, Snn=")
+Segment2_state_snn <- process_alignment_s2_state("./Alignments/A3_s2_n29_CDS_Only_aln_repeat_3.fasta", "Segment 2 - State, n=29, Snn=")
 
 Segment2_state_snn$plot
 
@@ -3724,11 +3725,11 @@ metadata_species <- metadata_species %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s3_species <-  function (
-    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s3_n30_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s3_n30_CDS_only_aln"
   
   # read in sequences
@@ -3858,7 +3859,7 @@ calculate_snn_s3_species <- function(distance_matrix, species_vector) {
   Snn 
 }
 
-Segment3_species_snn <- process_alignment_s3_species("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta", "Segment 3 - Species, n=30, Snn=")
+Segment3_species_snn <- process_alignment_s3_species("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta", "Segment 3 - Species, n=30, Snn=")
 
 Segment3_species_snn$plot
 
@@ -3884,11 +3885,11 @@ metadata_serotype <- metadata_serotype %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s3_serotype <-  function (
-    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s3_n30_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s3_n30_CDS_only_aln"
   
   # read in sequences
@@ -4018,7 +4019,7 @@ calculate_snn_s3_serotype <- function(distance_matrix, serotype_vector) {
   Snn 
 }
 
-Segment3_serotype_snn <- process_alignment_s3_serotype("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta", "Segment 3 - Serotype, n=30, Snn=")
+Segment3_serotype_snn <- process_alignment_s3_serotype("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta", "Segment 3 - Serotype, n=30, Snn=")
 
 Segment3_serotype_snn$plot
 
@@ -4044,11 +4045,11 @@ metadata_year <- metadata_year %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s3_year <-  function (
-    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s3_n30_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s3_n30_CDS_only_aln"
   
   # read in sequences
@@ -4178,7 +4179,7 @@ calculate_snn_s3_year <- function(distance_matrix, year_vector) {
   Snn 
 }
 
-Segment3_year_snn <- process_alignment_s3_year("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta", "Segment 3 - Year, n=30, Snn=")
+Segment3_year_snn <- process_alignment_s3_year("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta", "Segment 3 - Year, n=30, Snn=")
 
 Segment3_year_snn$plot
 
@@ -4204,11 +4205,11 @@ metadata_age <- metadata_age %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s3_age <-  function (
-    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s3_n30_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s3_n30_CDS_only_aln"
   
   # read in sequences
@@ -4337,7 +4338,7 @@ calculate_snn_s3_age <- function(distance_matrix, age_vector) {
   Snn 
 }
 
-Segment3_age_snn <- process_alignment_s3_age("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta", "Segment 3 - Animal Age, n=30, Snn=")
+Segment3_age_snn <- process_alignment_s3_age("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta", "Segment 3 - Animal Age, n=30, Snn=")
 
 Segment3_age_snn$plot
 
@@ -4363,11 +4364,11 @@ metadata_sex <- metadata_sex %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s3_sex <-  function (
-    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s3_n30_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s3_n30_CDS_only_aln"
   
   # read in sequences
@@ -4497,7 +4498,7 @@ calculate_snn_s3_sex <- function(distance_matrix, sex_vector) {
   Snn 
 }
 
-Segment3_sex_snn <- process_alignment_s3_sex("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta", "Segment 3 - Animal Sex, n=30, Snn=")
+Segment3_sex_snn <- process_alignment_s3_sex("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta", "Segment 3 - Animal Sex, n=30, Snn=")
 
 Segment3_sex_snn$plot
 
@@ -4522,11 +4523,11 @@ metadata_state <- metadata_state %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s3_state <-  function (
-    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s3_n30_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s3_n30_CDS_only_aln"
   
   # read in sequences
@@ -4656,7 +4657,7 @@ calculate_snn_s3_state <- function(distance_matrix, state_vector) {
   Snn 
 }
 
-Segment3_state_snn <- process_alignment_s3_state("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_2.fasta", "Segment 3 - State, n=30, Snn=")
+Segment3_state_snn <- process_alignment_s3_state("./Alignments/A3_s3_n30_CDS_Only_aln_repeat_3.fasta", "Segment 3 - State, n=30, Snn=")
 
 Segment3_state_snn$plot
 
@@ -4717,11 +4718,11 @@ metadata_species <- metadata_species %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s4_species <-  function (
-    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s4_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s4_n31_CDS_only_aln"
   
   # read in sequences
@@ -4851,7 +4852,7 @@ calculate_snn_s4_species <- function(distance_matrix, species_vector) {
   Snn 
 }
 
-Segment4_species_snn <- process_alignment_s4_species("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta", "Segment 4 - Species, n=31, Snn=")
+Segment4_species_snn <- process_alignment_s4_species("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta", "Segment 4 - Species, n=31, Snn=")
 
 Segment4_species_snn$plot
 
@@ -4877,11 +4878,11 @@ metadata_serotype <- metadata_serotype %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s4_serotype <-  function (
-    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s4_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s4_n31_CDS_only_aln"
   
   # read in sequences
@@ -5011,7 +5012,7 @@ calculate_snn_s4_serotype <- function(distance_matrix, serotype_vector) {
   Snn 
 }
 
-Segment4_serotype_snn <- process_alignment_s4_serotype("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta", "Segment 4 - Serotype, n=31, Snn=")
+Segment4_serotype_snn <- process_alignment_s4_serotype("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta", "Segment 4 - Serotype, n=31, Snn=")
 
 Segment4_serotype_snn$plot
 
@@ -5037,11 +5038,11 @@ metadata_year <- metadata_year %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s4_year <-  function (
-    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s4_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s4_n31_CDS_only_aln"
   
   # read in sequences
@@ -5171,7 +5172,7 @@ calculate_snn_s4_year <- function(distance_matrix, year_vector) {
   Snn 
 }
 
-Segment4_year_snn <- process_alignment_s4_year("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta", "Segment 4 - Year, n=31, Snn=")
+Segment4_year_snn <- process_alignment_s4_year("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta", "Segment 4 - Year, n=31, Snn=")
 
 Segment4_year_snn$plot
 
@@ -5197,11 +5198,11 @@ metadata_age <- metadata_age %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s4_age <-  function (
-    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s4_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s4_n31_CDS_only_aln"
   
   # read in sequences
@@ -5330,7 +5331,7 @@ calculate_snn_s4_age <- function(distance_matrix, age_vector) {
   Snn 
 }
 
-Segment4_age_snn <- process_alignment_s4_age("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta", "Segment 4 - Animal Age, n=31, Snn=")
+Segment4_age_snn <- process_alignment_s4_age("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta", "Segment 4 - Animal Age, n=31, Snn=")
 
 Segment4_age_snn$plot
 
@@ -5356,11 +5357,11 @@ metadata_sex <- metadata_sex %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s4_sex <-  function (
-    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s4_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s4_n31_CDS_only_aln"
   
   # read in sequences
@@ -5490,7 +5491,7 @@ calculate_snn_s4_sex <- function(distance_matrix, sex_vector) {
   Snn 
 }
 
-Segment4_sex_snn <- process_alignment_s4_sex("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta", "Segment 4 - Animal Sex, n=31, Snn=")
+Segment4_sex_snn <- process_alignment_s4_sex("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta", "Segment 4 - Animal Sex, n=31, Snn=")
 
 Segment4_sex_snn$plot
 
@@ -5516,11 +5517,11 @@ metadata_state <- metadata_state %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s4_state <-  function (
-    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s4_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s4_n31_CDS_only_aln"
   
   # read in sequences
@@ -5650,7 +5651,7 @@ calculate_snn_s4_state <- function(distance_matrix, state_vector) {
   Snn 
 }
 
-Segment4_state_snn <- process_alignment_s4_state("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_2.fasta", "Segment 4 - State, n=31, Snn=")
+Segment4_state_snn <- process_alignment_s4_state("./Alignments/A3_s4_n31_CDS_Only_aln_repeat_3.fasta", "Segment 4 - State, n=31, Snn=")
 
 Segment4_state_snn$plot
 
@@ -5709,11 +5710,11 @@ metadata_species <- metadata_species %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s5_species <-  function (
-    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s5_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s5_n31_CDS_only_aln"
   
   # read in sequences
@@ -5843,7 +5844,7 @@ calculate_snn_s5_species <- function(distance_matrix, species_vector) {
   Snn 
 }
 
-Segment5_species_snn <- process_alignment_s5_species("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta", "Segment 5 - Species, n=31, Snn=")
+Segment5_species_snn <- process_alignment_s5_species("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta", "Segment 5 - Species, n=31, Snn=")
 
 Segment5_species_snn$plot
 
@@ -5869,11 +5870,11 @@ metadata_serotype <- metadata_serotype %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s5_serotype <-  function (
-    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s5_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s5_n31_CDS_only_aln"
   
   # read in sequences
@@ -6003,7 +6004,7 @@ calculate_snn_s5_serotype <- function(distance_matrix, serotype_vector) {
   Snn 
 }
 
-Segment5_serotype_snn <- process_alignment_s5_serotype("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta", "Segment 5 - Serotype, n=31, Snn=")
+Segment5_serotype_snn <- process_alignment_s5_serotype("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta", "Segment 5 - Serotype, n=31, Snn=")
 
 Segment5_serotype_snn$plot
 
@@ -6029,11 +6030,11 @@ metadata_year <- metadata_year %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s5_year <-  function (
-    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s5_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s5_n31_CDS_only_aln"
   
   # read in sequences
@@ -6163,7 +6164,7 @@ calculate_snn_s5_year <- function(distance_matrix, year_vector) {
   Snn 
 }
 
-Segment5_year_snn <- process_alignment_s5_year("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta", "Segment 5 - Year, n=31, Snn=")
+Segment5_year_snn <- process_alignment_s5_year("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta", "Segment 5 - Year, n=31, Snn=")
 
 Segment5_year_snn$plot
 
@@ -6189,11 +6190,11 @@ metadata_age <- metadata_age %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s5_age <-  function (
-    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s5_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s5_n31_CDS_only_aln"
   
   # read in sequences
@@ -6322,7 +6323,7 @@ calculate_snn_s5_age <- function(distance_matrix, age_vector) {
   Snn 
 }
 
-Segment5_age_snn <- process_alignment_s5_age("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta", "Segment 5 - Animal Age, n=31, Snn=")
+Segment5_age_snn <- process_alignment_s5_age("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta", "Segment 5 - Animal Age, n=31, Snn=")
 
 Segment5_age_snn$plot
 
@@ -6348,11 +6349,11 @@ metadata_sex <- metadata_sex %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s5_sex <-  function (
-    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s5_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s5_n31_CDS_only_aln"
   
   # read in sequences
@@ -6482,7 +6483,7 @@ calculate_snn_s5_sex <- function(distance_matrix, sex_vector) {
   Snn 
 }
 
-Segment5_sex_snn <- process_alignment_s5_sex("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta", "Segment 5 - Animal Sex, n=31, Snn=")
+Segment5_sex_snn <- process_alignment_s5_sex("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta", "Segment 5 - Animal Sex, n=31, Snn=")
 
 Segment5_sex_snn$plot
 
@@ -6508,11 +6509,11 @@ metadata_state <- metadata_state %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s5_state <-  function (
-    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s5_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s5_n31_CDS_only_aln"
   
   # read in sequences
@@ -6642,7 +6643,7 @@ calculate_snn_s5_state <- function(distance_matrix, state_vector) {
   Snn 
 }
 
-Segment5_state_snn <- process_alignment_s5_state("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_2.fasta", "Segment 5 - State, n=31, Snn=")
+Segment5_state_snn <- process_alignment_s5_state("./Alignments/A3_s5_n31_CDS_Only_aln_repeat_3.fasta", "Segment 5 - State, n=31, Snn=")
 
 Segment5_state_snn$plot
 
@@ -6704,11 +6705,11 @@ metadata_species <- metadata_species %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s6_species <-  function (
-    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s6_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s6_n33_CDS_only_aln"
   
   # read in sequences
@@ -6838,7 +6839,7 @@ calculate_snn_s6_species <- function(distance_matrix, species_vector) {
   Snn 
 }
 
-Segment6_species_snn <- process_alignment_s6_species("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta", "Segment 6 - Species, n=33, Snn=")
+Segment6_species_snn <- process_alignment_s6_species("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta", "Segment 6 - Species, n=33, Snn=")
 
 
 Segment6_species_snn$plot
@@ -6865,11 +6866,11 @@ metadata_serotype <- metadata_serotype %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s6_serotype <-  function (
-    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s6_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s6_n33_CDS_only_aln"
   
   # read in sequences
@@ -6999,7 +7000,7 @@ calculate_snn_s6_serotype <- function(distance_matrix, serotype_vector) {
   Snn 
 }
 
-Segment6_serotype_snn <- process_alignment_s6_serotype("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta", "Segment 6 - Serotype, n=33, Snn=")
+Segment6_serotype_snn <- process_alignment_s6_serotype("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta", "Segment 6 - Serotype, n=33, Snn=")
 
 Segment6_serotype_snn$plot
 
@@ -7025,11 +7026,11 @@ metadata_year <- metadata_year %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s6_year <-  function (
-    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s6_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s6_n33_CDS_only_aln"
   
   # read in sequences
@@ -7159,7 +7160,7 @@ calculate_snn_s6_year <- function(distance_matrix, year_vector) {
   Snn 
 }
 
-Segment6_year_snn <- process_alignment_s6_year("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta", "Segment 6 - Year, n=33, Snn=")
+Segment6_year_snn <- process_alignment_s6_year("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta", "Segment 6 - Year, n=33, Snn=")
 
 Segment6_year_snn$plot
 
@@ -7185,11 +7186,11 @@ metadata_age <- metadata_age %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s6_age <-  function (
-    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s6_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s6_n33_CDS_only_aln"
   
   # read in sequences
@@ -7318,7 +7319,7 @@ calculate_snn_s6_age <- function(distance_matrix, age_vector) {
   Snn 
 }
 
-Segment6_age_snn <- process_alignment_s6_age("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta", "Segment 6 - Animal Age, n=33, Snn=")
+Segment6_age_snn <- process_alignment_s6_age("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta", "Segment 6 - Animal Age, n=33, Snn=")
 
 Segment6_age_snn$plot
 
@@ -7344,11 +7345,11 @@ metadata_sex <- metadata_sex %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s6_sex <-  function (
-    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s6_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s6_n33_CDS_only_aln"
   
   # read in sequences
@@ -7478,7 +7479,7 @@ calculate_snn_s6_sex <- function(distance_matrix, sex_vector) {
   Snn 
 }
 
-Segment6_sex_snn <- process_alignment_s6_sex("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta", "Segment 6 - Animal Sex, n=33, Snn=")
+Segment6_sex_snn <- process_alignment_s6_sex("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta", "Segment 6 - Animal Sex, n=33, Snn=")
 
 Segment6_sex_snn$plot
 
@@ -7504,11 +7505,11 @@ metadata_state <- metadata_state %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s6_state <-  function (
-    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s6_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s6_n33_CDS_only_aln"
   
   # read in sequences
@@ -7638,7 +7639,7 @@ calculate_snn_s6_state <- function(distance_matrix, state_vector) {
   Snn 
 }
 
-Segment6_state_snn <- process_alignment_s6_state("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_2.fasta", "Segment 6 - State, n=33, Snn=")
+Segment6_state_snn <- process_alignment_s6_state("./Alignments/A3_s6_n33_CDS_Only_aln_repeat_3.fasta", "Segment 6 - State, n=33, Snn=")
 
 Segment6_state_snn$plot
 
@@ -7699,11 +7700,11 @@ metadata_species <- metadata_species %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s7_species <-  function (
-    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s7_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s7_n29_CDS_only_aln"
   
   # read in sequences
@@ -7833,7 +7834,7 @@ calculate_snn_s7_species <- function(distance_matrix, species_vector) {
   Snn 
 }
 
-Segment7_species_snn <- process_alignment_s7_species("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta", "Segment 7 - Species, n=29, Snn=")
+Segment7_species_snn <- process_alignment_s7_species("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta", "Segment 7 - Species, n=29, Snn=")
 
 Segment7_species_snn$plot
 
@@ -7859,11 +7860,11 @@ metadata_serotype <- metadata_serotype %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s7_serotype <-  function (
-    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s7_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s7_n29_CDS_only_aln"
   
   # read in sequences
@@ -7993,7 +7994,7 @@ calculate_snn_s7_serotype <- function(distance_matrix, serotype_vector) {
   Snn 
 }
 
-Segment7_serotype_snn <- process_alignment_s7_serotype("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta", "Segment 7 - Serotype, n=29, Snn=")
+Segment7_serotype_snn <- process_alignment_s7_serotype("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta", "Segment 7 - Serotype, n=29, Snn=")
 
 Segment7_serotype_snn$plot
 
@@ -8019,11 +8020,11 @@ metadata_year <- metadata_year %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s7_year <-  function (
-    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s7_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s7_n29_CDS_only_aln"
   
   # read in sequences
@@ -8153,7 +8154,7 @@ calculate_snn_s7_year <- function(distance_matrix, year_vector) {
   Snn 
 }
 
-Segment7_year_snn <- process_alignment_s7_year("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta", "Segment 7 - Year, n=29, Snn=")
+Segment7_year_snn <- process_alignment_s7_year("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta", "Segment 7 - Year, n=29, Snn=")
 
 Segment7_year_snn$plot
 
@@ -8179,11 +8180,11 @@ metadata_age <- metadata_age %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s7_age <-  function (
-    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s7_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s7_n29_CDS_only_aln"
   
   # read in sequences
@@ -8312,7 +8313,7 @@ calculate_snn_s7_age <- function(distance_matrix, age_vector) {
   Snn 
 }
 
-Segment7_age_snn <- process_alignment_s7_age("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta", "Segment 7 - Animal Age, n=29, Snn=")
+Segment7_age_snn <- process_alignment_s7_age("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta", "Segment 7 - Animal Age, n=29, Snn=")
 
 Segment7_age_snn$plot
 
@@ -8338,11 +8339,11 @@ metadata_sex <- metadata_sex %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s7_sex <-  function (
-    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s7_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s7_n29_CDS_only_aln"
   
   # read in sequences
@@ -8472,7 +8473,7 @@ calculate_snn_s7_sex <- function(distance_matrix, sex_vector) {
   Snn 
 }
 
-Segment7_sex_snn <- process_alignment_s7_sex("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta", "Segment 7 - Animal Sex, n=29, Snn=")
+Segment7_sex_snn <- process_alignment_s7_sex("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta", "Segment 7 - Animal Sex, n=29, Snn=")
 
 Segment7_sex_snn$plot
 
@@ -8497,11 +8498,11 @@ metadata_state <- metadata_state %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s7_state <-  function (
-    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s7_n29_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s7_n29_CDS_only_aln"
   
   # read in sequences
@@ -8631,7 +8632,7 @@ calculate_snn_s7_state <- function(distance_matrix, state_vector) {
   Snn 
 }
 
-Segment7_state_snn <- process_alignment_s7_state("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_2.fasta", "Segment 7 - State, n=29, Snn=")
+Segment7_state_snn <- process_alignment_s7_state("./Alignments/A3_s7_n29_CDS_Only_aln_repeat_3.fasta", "Segment 7 - State, n=29, Snn=")
 
 Segment7_state_snn$plot
 
@@ -8693,11 +8694,11 @@ metadata_species <- metadata_species %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s8_species <-  function (
-    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s8_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s8_n33_CDS_only_aln"
   
   # read in sequences
@@ -8827,7 +8828,7 @@ calculate_snn_s8_species <- function(distance_matrix, species_vector) {
   Snn 
 }
 
-Segment8_species_snn <- process_alignment_s8_species("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta", "Segment 8 - Species, n=33, Snn=")
+Segment8_species_snn <- process_alignment_s8_species("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta", "Segment 8 - Species, n=33, Snn=")
 
 Segment8_species_snn$plot
 
@@ -8853,11 +8854,11 @@ metadata_serotype <- metadata_serotype %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s8_serotype <-  function (
-    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s8_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s8_n33_CDS_only_aln"
   
   # read in sequences
@@ -8987,7 +8988,7 @@ calculate_snn_s8_serotype <- function(distance_matrix, serotype_vector) {
   Snn 
 }
 
-Segment8_serotype_snn <- process_alignment_s8_serotype("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta", "Segment 8 - Serotype, n=33, Snn=")
+Segment8_serotype_snn <- process_alignment_s8_serotype("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta", "Segment 8 - Serotype, n=33, Snn=")
 
 Segment8_serotype_snn$plot
 
@@ -9013,11 +9014,11 @@ metadata_year <- metadata_year %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s8_year <-  function (
-    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s8_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s8_n33_CDS_only_aln"
   
   # read in sequences
@@ -9147,7 +9148,7 @@ calculate_snn_s8_year <- function(distance_matrix, year_vector) {
   Snn 
 }
 
-Segment8_year_snn <- process_alignment_s8_year("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta", "Segment 8 - Year, n=33, Snn=")
+Segment8_year_snn <- process_alignment_s8_year("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta", "Segment 8 - Year, n=33, Snn=")
 
 Segment8_year_snn$plot
 
@@ -9173,11 +9174,11 @@ metadata_age <- metadata_age %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s8_age <-  function (
-    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s8_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s8_n33_CDS_only_aln"
   
   # read in sequences
@@ -9306,7 +9307,7 @@ calculate_snn_s8_age <- function(distance_matrix, age_vector) {
   Snn 
 }
 
-Segment8_age_snn <- process_alignment_s8_age("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta", "Segment 8 - Animal Age, n=33, Snn=")
+Segment8_age_snn <- process_alignment_s8_age("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta", "Segment 8 - Animal Age, n=33, Snn=")
 
 Segment8_age_snn$plot
 
@@ -9332,11 +9333,11 @@ metadata_sex <- metadata_sex %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s8_sex <-  function (
-    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s8_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s8_n33_CDS_only_aln"
   
   # read in sequences
@@ -9466,7 +9467,7 @@ calculate_snn_s8_sex <- function(distance_matrix, sex_vector) {
   Snn 
 }
 
-Segment8_sex_snn <- process_alignment_s8_sex("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta", "Segment 8 - Animal Sex, n=33, Snn=")
+Segment8_sex_snn <- process_alignment_s8_sex("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta", "Segment 8 - Animal Sex, n=33, Snn=")
 
 Segment8_sex_snn$plot
 
@@ -9491,11 +9492,11 @@ metadata_state <- metadata_state %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s8_state <-  function (
-    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s8_n33_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s8_n33_CDS_only_aln"
   
   # read in sequences
@@ -9625,7 +9626,7 @@ calculate_snn_s8_state <- function(distance_matrix, state_vector) {
   Snn 
 }
 
-Segment8_state_snn <- process_alignment_s8_state("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_2.fasta", "Segment 8 - State, n=33, Snn=")
+Segment8_state_snn <- process_alignment_s8_state("./Alignments/A3_s8_n33_CDS_Only_aln_repeat_3.fasta", "Segment 8 - State, n=33, Snn=")
 
 Segment8_state_snn$plot
 
@@ -9686,11 +9687,11 @@ metadata_species <- metadata_species %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s9_species <-  function (
-    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s9_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s9_n31_CDS_only_aln"
   
   # read in sequences
@@ -9820,7 +9821,7 @@ calculate_snn_s9_species <- function(distance_matrix, species_vector) {
   Snn 
 }
 
-Segment9_species_snn <- process_alignment_s9_species("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta", "Segment 9 - Species, n=31, Snn=")
+Segment9_species_snn <- process_alignment_s9_species("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta", "Segment 9 - Species, n=31, Snn=")
 
 Segment9_species_snn$plot
 
@@ -9846,11 +9847,11 @@ metadata_serotype <- metadata_serotype %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s9_serotype <-  function (
-    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s9_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s9_n31_CDS_only_aln"
   
   # read in sequences
@@ -9980,7 +9981,7 @@ calculate_snn_s9_serotype <- function(distance_matrix, serotype_vector) {
   Snn 
 }
 
-Segment9_serotype_snn <- process_alignment_s9_serotype("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta", "Segment 9 - Serotype, n=31, Snn=")
+Segment9_serotype_snn <- process_alignment_s9_serotype("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta", "Segment 9 - Serotype, n=31, Snn=")
 
 Segment9_serotype_snn$plot
 
@@ -10006,11 +10007,11 @@ metadata_year <- metadata_year %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s9_year <-  function (
-    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s9_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s9_n31_CDS_only_aln"
   
   # read in sequences
@@ -10140,7 +10141,7 @@ calculate_snn_s9_year <- function(distance_matrix, year_vector) {
   Snn 
 }
 
-Segment9_year_snn <- process_alignment_s9_year("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta", "Segment 9 - Year, n=31, Snn=")
+Segment9_year_snn <- process_alignment_s9_year("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta", "Segment 9 - Year, n=31, Snn=")
 
 Segment9_year_snn$plot
 
@@ -10166,11 +10167,11 @@ metadata_age <- metadata_age %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s9_age <-  function (
-    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s9_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s9_n31_CDS_only_aln"
   
   # read in sequences
@@ -10299,7 +10300,7 @@ calculate_snn_s9_age <- function(distance_matrix, age_vector) {
   Snn 
 }
 
-Segment9_age_snn <- process_alignment_s9_age("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta", "Segment 9 - Animal Age, n=31, Snn=")
+Segment9_age_snn <- process_alignment_s9_age("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta", "Segment 9 - Animal Age, n=31, Snn=")
 
 Segment9_age_snn$plot
 
@@ -10325,11 +10326,11 @@ metadata_sex <- metadata_sex %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s9_sex <-  function (
-    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s9_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s9_n31_CDS_only_aln"
   
   # read in sequences
@@ -10459,7 +10460,7 @@ calculate_snn_s9_sex <- function(distance_matrix, sex_vector) {
   Snn 
 }
 
-Segment9_sex_snn <- process_alignment_s9_sex("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta", "Segment 9 - Animal Sex, n=31, Snn=")
+Segment9_sex_snn <- process_alignment_s9_sex("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta", "Segment 9 - Animal Sex, n=31, Snn=")
 
 Segment9_sex_snn$plot
 
@@ -10484,11 +10485,11 @@ metadata_state <- metadata_state %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s9_state <-  function (
-    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s9_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s9_n31_CDS_only_aln"
   
   # read in sequences
@@ -10618,7 +10619,7 @@ calculate_snn_s9_state <- function(distance_matrix, state_vector) {
   Snn 
 }
 
-Segment9_state_snn <- process_alignment_s9_state("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_2.fasta", "Segment 9 - State, n=31, Snn=")
+Segment9_state_snn <- process_alignment_s9_state("./Alignments/A3_s9_n31_CDS_Only_aln_repeat_3.fasta", "Segment 9 - State, n=31, Snn=")
 
 Segment9_state_snn$plot
 
@@ -10679,11 +10680,11 @@ metadata_species <- metadata_species %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s10_species <-  function (
-    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s10_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s10_n31_CDS_only_aln"
   
   # read in sequences
@@ -10813,7 +10814,7 @@ calculate_snn_s10_species <- function(distance_matrix, species_vector) {
   Snn 
 }
 
-Segment10_species_snn <- process_alignment_s10_species("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta", "Segment 10 - Species, n=31, Snn=")
+Segment10_species_snn <- process_alignment_s10_species("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta", "Segment 10 - Species, n=31, Snn=")
 
 Segment10_species_snn$plot
 
@@ -10839,11 +10840,11 @@ metadata_serotype <- metadata_serotype %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s10_serotype <-  function (
-    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s10_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s10_n31_CDS_only_aln"
   
   # read in sequences
@@ -10973,7 +10974,7 @@ calculate_snn_s10_serotype <- function(distance_matrix, serotype_vector) {
   Snn 
 }
 
-Segment10_serotype_snn <- process_alignment_s10_serotype("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta", "Segment 10 - Serotype, n=31, Snn=")
+Segment10_serotype_snn <- process_alignment_s10_serotype("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta", "Segment 10 - Serotype, n=31, Snn=")
 
 Segment10_serotype_snn$plot
 
@@ -10999,11 +11000,11 @@ metadata_year <- metadata_year %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s10_year <-  function (
-    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s10_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s10_n31_CDS_only_aln"
   
   # read in sequences
@@ -11133,7 +11134,7 @@ calculate_snn_s10_year <- function(distance_matrix, year_vector) {
   Snn 
 }
 
-Segment10_year_snn <- process_alignment_s10_year("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta", "Segment 10 - Year, n=31, Snn=")
+Segment10_year_snn <- process_alignment_s10_year("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta", "Segment 10 - Year, n=31, Snn=")
 
 Segment10_year_snn$plot
 
@@ -11159,11 +11160,11 @@ metadata_age <- metadata_age %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s10_age <-  function (
-    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s10_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s10_n31_CDS_only_aln"
   
   # read in sequences
@@ -11292,7 +11293,7 @@ calculate_snn_s10_age <- function(distance_matrix, age_vector) {
   Snn 
 }
 
-Segment10_age_snn <- process_alignment_s10_age("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta", "Segment 10 - Animal Age, n=31, Snn=")
+Segment10_age_snn <- process_alignment_s10_age("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta", "Segment 10 - Animal Age, n=31, Snn=")
 
 Segment10_age_snn$plot
 
@@ -11319,11 +11320,11 @@ metadata_sex <- metadata_sex %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s10_sex <-  function (
-    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s10_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s10_n31_CDS_only_aln"
   
   # read in sequences
@@ -11453,7 +11454,7 @@ calculate_snn_s10_sex <- function(distance_matrix, sex_vector) {
   Snn 
 }
 
-Segment10_sex_snn <- process_alignment_s10_sex("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta", "Segment 10 - Animal Sex, n=31, Snn=")
+Segment10_sex_snn <- process_alignment_s10_sex("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta", "Segment 10 - Animal Sex, n=31, Snn=")
 
 Segment10_sex_snn$plot
 
@@ -11480,11 +11481,11 @@ metadata_state <- metadata_state %>% drop_na()
 num_permutations <- 5000
 
 process_alignment_s10_state <-  function (
-    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta",
+    fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta",
     prefix="A3_s10_n31_CDS_only_aln") {
   
   # DEBUG
-  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta"
+  # fasta_msa = "./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta"
   # prefix="A3_s10_n31_CDS_only_aln"
   
   # read in sequences
@@ -11614,7 +11615,7 @@ calculate_snn_s10_state <- function(distance_matrix, state_vector) {
   Snn 
 }
 
-Segment10_state_snn <- process_alignment_s10_state("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_2.fasta", "Segment 10 - State, n=31, Snn=")
+Segment10_state_snn <- process_alignment_s10_state("./Alignments/A3_s10_n31_CDS_Only_aln_repeat_3.fasta", "Segment 10 - State, n=31, Snn=")
 
 Segment10_state_snn$plot
 
@@ -11701,7 +11702,7 @@ species_pval_supp_table <-
   mutate(pval_bonf = p.adjust(pval, method = "bonferroni", n = length(pval)))
 
 write.table(species_pval_supp_table, 
-            file="all_segments_all_samples_SPECIES_supplemental_table_snn_061826.txt",
+            file="all_segments_all_samples_SPECIES_supplemental_table_snn_071326.txt",
             quote=F, sep="\t", row.names=F)
 
 ##########################
@@ -11729,7 +11730,7 @@ serotype_pval_supp_table <-
   mutate(pval_bonf = p.adjust(pval, method = "bonferroni", n = length(pval)))
 
 write.table(serotype_pval_supp_table, 
-            file="all_segments_all_samples_SEROTYPE_supplemental_table_snn_061826.txt",
+            file="all_segments_all_samples_SEROTYPE_supplemental_table_snn_071326.txt",
             quote=F, sep="\t", row.names=F)
 
 ##########################
@@ -11757,7 +11758,7 @@ year_pval_supp_table <-
   mutate(pval_bonf = p.adjust(pval, method = "bonferroni", n = length(pval)))
 
 write.table(year_pval_supp_table, 
-            file="all_segments_all_samples_YEAR_supplemental_table_snn_061826.txt",
+            file="all_segments_all_samples_YEAR_supplemental_table_snn_071326.txt",
             quote=F, sep="\t", row.names=F)
 
 ##########################
@@ -11785,7 +11786,7 @@ sex_pval_supp_table <-
   mutate(pval_bonf = p.adjust(pval, method = "bonferroni", n = length(pval)))
 
 write.table(sex_pval_supp_table, 
-            file="all_segments_all_samples_SEX_supplemental_table_snn_061826.txt",
+            file="all_segments_all_samples_SEX_supplemental_table_snn_071326.txt",
             quote=F, sep="\t", row.names=F)
 ##########################
 
@@ -11811,7 +11812,7 @@ age_pval_supp_table <-
   mutate(pval_bonf = p.adjust(pval, method = "bonferroni", n = length(pval)))
 
 write.table(age_pval_supp_table, 
-            file="all_segments_all_samples_AGE_supplemental_table_snn_061826.txt",
+            file="all_segments_all_samples_AGE_supplemental_table_snn_071326.txt",
             quote=F, sep="\t", row.names=F)
 ##########################
 
@@ -11837,7 +11838,7 @@ state_pval_supp_table <-
   mutate(pval_bonf = p.adjust(pval, method = "bonferroni", n = length(pval)))
 
 write.table(state_pval_supp_table, 
-            file="all_segments_all_samples_STATE_supplemental_table_snn_061826.txt",
+            file="all_segments_all_samples_STATE_supplemental_table_snn_071326.txt",
             quote=F, sep="\t", row.names=F)
 ##########################
 
