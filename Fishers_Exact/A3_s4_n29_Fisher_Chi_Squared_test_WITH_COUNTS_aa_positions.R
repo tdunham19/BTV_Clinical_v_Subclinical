@@ -20,7 +20,7 @@ library(tidyr)
 #######################################################
 
 # read in protein MSA
-fasta_file <- "A3_s4_n29_CDS_Only_protein_aln_repeat_3.fasta"
+fasta_file <- "A3_s4_n29_CDS_Only_protein_aln.fasta"
 msa <- readAAStringSet(fasta_file)
 
 # convert alignment to matrix (rows = sequences, cols = positions)
