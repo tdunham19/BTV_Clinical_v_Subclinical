@@ -20,7 +20,7 @@ library(tidyr)
 #######################################################
 
 # read in protein MSA
-fasta_file <- "A3_s2_n29_CDS_Only_protein_aln_repeat_2.fasta"
+fasta_file <- "A3_s2_n29_CDS_Only_protein_aln_repeat_3.fasta"
 msa <- readAAStringSet(fasta_file)
 
 # convert alignment to matrix (rows = sequences, cols = positions)
@@ -48,7 +48,7 @@ aa_long <- data.frame(
 aa_long <- aa_long[aa_long$aa != "-", ]
 
 # save for downstream inspection
-write.csv(aa_long, "A3_s2_n29_results_amino_acids_by_sample_and_position_061826_WITH_COUNTS.csv", row.names = FALSE)
+write.csv(aa_long, "A3_s2_n29_results_amino_acids_by_sample_and_position_071326_WITH_COUNTS.csv", row.names = FALSE)
 
 # initialize results storage
 results <- list()
@@ -119,4 +119,4 @@ results_df <- bind_rows(results) %>%
   arrange(fisher_p)
 
 # write output to csv
-write.csv(results_df, "A3_s2_n29_results_fisher_exact_chi_squared_WITH_COUNTS_by_position_061826.csv", row.names = FALSE)
+write.csv(results_df, "A3_s2_n29_results_fisher_exact_chi_squared_WITH_COUNTS_by_position_071326.csv", row.names = FALSE)
